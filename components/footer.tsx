@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/data/site";
 const groups = {
   "Future Founders": [
@@ -28,13 +29,15 @@ export function Footer() {
         <div className="footer-top">
           <div className="footer-manifesto">
             <Link href="/" className="footer-wordmark">
-              Future
-              {" "}<br />
-              Founders<span>↗</span>
+              <Image
+                src="/resources/future-founders-logo.png"
+                width={190}
+                height={190}
+                alt="Future Founders"
+              />
             </Link>
             <p>
-              Built by students who believe
-              {" "}<br />
+              Built by students who believe <br />
               ideas are meant to be tested.
             </p>
           </div>
@@ -73,8 +76,8 @@ export function Footer() {
         </div>
         {site.development && (
           <p className="development-note">
-            Development preview · Chapter listings are samples. Photography is
-            illustrative.
+            Development preview · Applications and messages are saved locally,
+            not sent.
           </p>
         )}
       </div>

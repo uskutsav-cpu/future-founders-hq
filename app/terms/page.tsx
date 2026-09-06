@@ -16,17 +16,16 @@ export default function Page() {
         </p>
         <h2>Sample content</h2>
         <p>
-          The ten chapter records use fictional campus names. Competition names,
-          organizers, deadlines, and formats are fictional examples. They do not
-          establish school affiliations, partnerships, or real registration
-          opportunities.
+          Chapter names and meeting photographs were supplied by Future
+          Founders. Competition names, organizers, deadlines, and formats are
+          fictional examples. They do not establish partnerships or real
+          registration opportunities.
         </p>
         <h2>Photography</h2>
         <p>
-          Stock photography illustrates student collaboration and presentations.
-          People shown are not represented as Future Founders members or
-          endorsers. Photo sources and license details are recorded with the
-          project.
+          Meeting photographs and the Future Founders logo were supplied by the
+          organization. Individual photos are not attributed to a particular
+          school.
         </p>
         <h2>Applications and messages</h2>
         <p>

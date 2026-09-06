@@ -34,8 +34,7 @@ export default function Page() {
           <div>
             <Eyebrow>BUILD SOMETHING THAT STAYS.</Eyebrow>
             <h2>
-              More than a title.
-              {" "}<br />
+              More than a title. <br />
               Something you started.
             </h2>
             <p className="body-copy">
@@ -84,8 +83,7 @@ export default function Page() {
           <div>
             <Eyebrow>YOU BUILD IT. WE BACK YOU.</Eyebrow>
             <h2>
-              A starting point.
-              {" "}<br />
+              A starting point. <br />
               And people to call.
             </h2>
             <p className="body-copy">

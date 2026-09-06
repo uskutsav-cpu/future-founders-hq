@@ -41,13 +41,13 @@ test("select values must match configured choices", () => {
   assert.ok(validateField(f("schoolType"), "invented"));
   assert.equal(validateField(f("schoolType"), "College"), "");
 });
-test("development data has exactly ten unique sample chapters and no false people or membership claims", () => {
-  assert.equal(chapters.length, 10);
-  assert.equal(new Set(chapters.map((c) => c.slug)).size, 10);
+test("six supplied chapters have unique routes and no invented people or membership claims", () => {
+  assert.equal(chapters.length, 6);
+  assert.equal(new Set(chapters.map((c) => c.slug)).size, 6);
   assert.ok(
     chapters.every(
       (c) =>
-        c.sample &&
+        !c.sample &&
         c.status === "Active" &&
         !c.president &&
         c.memberCount === undefined,

@@ -47,8 +47,7 @@ export default function Page() {
         <div>
           <Eyebrow>OUR MISSION</Eyebrow>
           <h2>
-            Make building
-            {" "}<br />a student habit.
+            Make building <br />a student habit.
           </h2>
           <p className="body-copy">
             Entrepreneurship often shows up as a class, a competition, or a
@@ -66,8 +65,7 @@ export default function Page() {
           <div>
             <Eyebrow>STUDENT-LED. FROM DAY ONE.</Eyebrow>
             <h2>
-              The students
-              {" "}<br />
+              The students <br />
               run the room.
             </h2>
           </div>

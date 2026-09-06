@@ -9,8 +9,7 @@ export function FAQAccordion({
       <div>
         <p className="eyebrow">A FEW GOOD QUESTIONS</p>
         <h2>
-          Before you
-          {" "}<br />
+          Before you <br />
           jump in.
         </h2>
       </div>

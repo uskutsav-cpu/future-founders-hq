@@ -23,7 +23,7 @@ export default function Page() {
           >
             <h2>
               {category}
-              <span className="red">.</span>
+              <span className="brand-accent">.</span>
             </h2>
             {resources
               .filter((r) => r.category === category)

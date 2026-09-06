@@ -24,14 +24,14 @@ export default function Page() {
             <span>Active Chapters</span>
           </strong>
           <p>
-            High school and college chapters.
-            {" "}<br />
+            High school and college chapters. <br />
             Built and led by students.
           </p>
         </div>
         <p className="sample-notice">
-          Development directory · These 10 chapters are fictional samples, not
-          verified school affiliations.
+          Six chapter listings are available below. School details for Nepal and
+          Azerbaijan are coming soon; more listings will be added to the
+          directory.
         </p>
         <ChapterDirectory />
       </section>

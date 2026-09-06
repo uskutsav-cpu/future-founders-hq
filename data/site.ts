@@ -21,17 +21,30 @@ export const navigation = [
   ["Resources", "/resources"],
   ["Contact", "/contact"],
 ];
+// Real photography supplied by Future Founders. No school attribution is inferred.
 export const images = {
   hero: {
-    src: "/images/placeholder-student-collaboration-1400.webp",
-    alt: "Three students working together around a laptop",
+    src: "/images/chapter-meeting-1400.webp",
+    alt: "Future Founders students sharing ideas during a chapter meeting",
     width: 1400,
-    height: 933,
+    height: 947,
   },
   presentation: {
-    src: "/images/placeholder-student-presentation-1400.webp",
-    alt: "A student presenting ideas to a group in a library",
+    src: "/images/chapter-workshop-1400.webp",
+    alt: "Students working through a minimum viable product workshop",
     width: 1400,
-    height: 933,
+    height: 1040,
+  },
+  collaboration: {
+    src: "/images/chapter-collaboration-1400.webp",
+    alt: "Students gathering around tables with laptops during a chapter session",
+    width: 1400,
+    height: 1087,
+  },
+  deliverables: {
+    src: "/images/chapter-deliverables-1400.webp",
+    alt: "Chapter members discussing the next steps for their first product",
+    width: 1400,
+    height: 1173,
   },
 };

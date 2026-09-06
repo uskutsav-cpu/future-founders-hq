@@ -1,50 +1,38 @@
 import Link from "next/link";
-import { chapters, activeChapterCount } from "@/data/chapters";
+import { chapters } from "@/data/chapters";
+const countries = [...new Set(chapters.map(c => c.country))];
 export function Network() {
   return (
-    <div className="network-display">
-      <div className="network-display-top">
-        <span className="eyebrow">THE NETWORK, AT A GLANCE</span>
-        <span className="network-live">
-          <i />
-          {activeChapterCount} active
-        </span>
+    <div className="global-network">
+      <div className="network-top">
+        <span className="eyebrow">LOCAL ROOTS. SHARED AMBITION.</span>
+        <span>{String(countries.length).padStart(2, "0")} countries represented</span>
       </div>
-      <div className="network-regions">
-        {["West", "Midwest", "South", "Northeast"].map((region, i) => (
-          <div className="network-region" key={region}>
-            <div className="region-heading">
-              <span>0{i + 1}</span>
-              <h3>{region}</h3>
-              <span>{chapters.filter((c) => c.region === region).length}</span>
-            </div>
+      {countries.map((country, i) => (
+        <div className="country-row" key={country}>
+          <div className="country-name">
+            <span>0{i + 1}</span>
+            <h3>
+              {country === "United Arab Emirates" ? "UAE / Dubai" : country}
+            </h3>
+          </div>
+          <div className="country-chapters">
             {chapters
-              .filter((c) => c.region === region)
-              .slice(0, 4)
+              .filter((c) => c.country === country)
               .map((c) => (
-                <Link href={"/chapters/" + c.slug} key={c.id}>
-                  <span className="node" />
-                  <span>
-                    {c.city}
-                    <small>{c.name.replace(" Chapter", "")}</small>
-                  </span>
-                  <span className="network-arrow" aria-hidden="true">
-                    ↗
-                  </span>
+                <Link key={c.id} href={`/chapters/${c.slug}`}>
+                  <span>{c.name}</span>
+                  <span aria-hidden="true">↗</span>
                 </Link>
               ))}
-            {chapters.filter((c) => c.region === region).length > 4 && (
-              <Link href="/chapters">
-                + {chapters.filter((c) => c.region === region).length - 4} more
-                chapters →
-              </Link>
-            )}
           </div>
-        ))}
-      </div>
-      <div className="network-display-bottom">
-        <span>Different campuses. Shared ambition.</span>
-        <span>Sample chapter network</span>
+        </div>
+      ))}
+      <div className="network-bottom">
+        <span>Different schools. The same drive to build.</span>
+        <Link href="/start-a-chapter">
+          Add your school <span aria-hidden="true">↗</span>
+        </Link>
       </div>
     </div>
   );

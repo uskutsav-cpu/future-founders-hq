@@ -10,7 +10,7 @@ export function ChapterDirectory() {
   const found = chapters.filter(
     (c) =>
       (type === "All" || c.type === type) &&
-      [c.name, c.school, c.city, c.state, c.country]
+      [c.name, c.school, c.district, c.city, c.state, c.country]
         .join(" ")
         .toLowerCase()
         .includes(q.toLowerCase().trim()),
@@ -68,12 +68,17 @@ export function ChapterDirectory() {
             </span>
             <span>
               <strong>{c.name}</strong>
-              <small>{c.school}</small>
+              <small>
+                {c.district ||
+                  (c.school
+                    ? "Future Founders chapter"
+                    : "School details to come")}
+              </small>
             </span>
           </span>
           <span className="chapter-location">
-            {c.city}
-            <small>{c.state}</small>
+            {c.city || c.country}
+            <small>{c.city ? c.state || c.country : ""}</small>
           </span>
           <span className="chapter-type">{c.type}</span>
           <span className="chapter-status">

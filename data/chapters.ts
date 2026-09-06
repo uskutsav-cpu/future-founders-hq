@@ -4,7 +4,8 @@ export type Chapter = {
   name: string;
   school?: string;
   type: "High School" | "College";
-  city: string;
+  city?: string;
+  district?: string;
   state?: string;
   country: string;
   founded?: number;
@@ -19,148 +20,94 @@ export type Chapter = {
   leadership?: { name: string; role: string; image?: string }[];
   achievements?: string[];
   photos?: { src: string; alt: string }[];
-  region: "West" | "Midwest" | "South" | "Northeast";
+  region: string;
   sample: boolean;
 };
-// DEVELOPMENT SAMPLE DATA ONLY. Exactly 10 fictional chapter records.
-// Schools, affiliations, locations and founding years MUST be verified before launch.
-// No membership, president or achievement data has been invented.
+// Chapter affiliations supplied by the organization, September 6, 2026.
+// School locations verified against school websites; these sources do not verify affiliation.
+// Rock Hill: prosper-isd.net/o/rhhs/page/contact-us (Frisco, Prosper ISD).
+// Emerson: friscoisd.org/o/ehs (McKinney, Frisco ISD).
+// Coppell: coppellisd.com/o/chs. Amity: amityschooldubai.com/contact-us.
+// Nepal and Azerbaijan school/city details have not yet been supplied. Never invent them.
 export const chapters: Chapter[] = [
   {
-    id: "demo-01",
-    slug: "northline",
-    name: "Northline Chapter",
-    school: "Northline Learning Campus",
-    type: "College",
-    city: "Seattle",
-    state: "Washington",
-    country: "United States",
-    region: "West",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-02",
-    slug: "pacific-workshop",
-    name: "Pacific Workshop Chapter",
-    school: "Pacific Workshop Campus",
-    type: "College",
-    city: "San Francisco",
-    state: "California",
-    country: "United States",
-    region: "West",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-03",
-    slug: "sunridge",
-    name: "Sunridge Chapter",
-    school: "Sunridge Learning Campus",
-    type: "High School",
-    city: "Los Angeles",
-    state: "California",
-    country: "United States",
-    region: "West",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-04",
-    slug: "frontier",
-    name: "Frontier Chapter",
-    school: "Frontier Learning Campus",
-    type: "High School",
-    city: "Denver",
-    state: "Colorado",
-    country: "United States",
-    region: "West",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-05",
-    slug: "lakeside-builders",
-    name: "Lakeside Builders Chapter",
-    school: "Lakeside Builders Campus",
-    type: "College",
-    city: "Chicago",
-    state: "Illinois",
-    country: "United States",
-    region: "Midwest",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-06",
-    slug: "oakfield",
-    name: "Oakfield Chapter",
-    school: "Oakfield Learning Campus",
-    type: "High School",
-    city: "Columbus",
-    state: "Ohio",
-    country: "United States",
-    region: "Midwest",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-07",
-    slug: "redwood-studio",
-    name: "Redwood Studio Chapter",
-    school: "Redwood Studio Campus",
-    type: "College",
-    city: "Austin",
+    id: "rock-hill",
+    slug: "rock-hill-high-school",
+    name: "Rock Hill High School",
+    school: "Rock Hill High School",
+    district: "Prosper ISD",
+    city: "Frisco",
     state: "Texas",
     country: "United States",
-    region: "South",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-08",
-    slug: "peachtree-builders",
-    name: "Peachtree Builders Chapter",
-    school: "Peachtree Builders Campus",
+    region: "North America",
     type: "High School",
-    city: "Atlanta",
-    state: "Georgia",
-    country: "United States",
-    region: "South",
     status: "Active",
-    sample: true,
+    sample: false,
   },
   {
-    id: "demo-09",
-    slug: "eastbridge",
-    name: "Eastbridge Chapter",
-    school: "Eastbridge Learning Campus",
-    type: "College",
-    city: "Boston",
-    state: "Massachusetts",
-    country: "United States",
-    region: "Northeast",
-    status: "Active",
-    sample: true,
-  },
-  {
-    id: "demo-10",
-    slug: "harbor-studio",
-    name: "Harbor Studio Chapter",
-    school: "Harbor Studio Campus",
+    id: "amity-dubai",
+    slug: "amity-school-dubai",
+    name: "Amity School Dubai",
+    school: "Amity School Dubai",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    region: "Middle East",
     type: "High School",
-    city: "New York",
-    state: "New York",
-    country: "United States",
-    region: "Northeast",
     status: "Active",
-    sample: true,
+    sample: false,
+  },
+  {
+    id: "emerson",
+    slug: "emerson-high-school",
+    name: "Emerson High School",
+    school: "Emerson High School",
+    district: "Frisco ISD",
+    city: "McKinney",
+    state: "Texas",
+    country: "United States",
+    region: "North America",
+    type: "High School",
+    status: "Active",
+    sample: false,
+  },
+  {
+    id: "coppell",
+    slug: "coppell-high-school",
+    name: "Coppell High School",
+    school: "Coppell High School",
+    city: "Coppell",
+    state: "Texas",
+    country: "United States",
+    region: "North America",
+    type: "High School",
+    status: "Active",
+    sample: false,
+  },
+  {
+    id: "nepal",
+    slug: "nepal",
+    name: "Nepal Chapter",
+    country: "Nepal",
+    region: "South Asia",
+    type: "High School",
+    status: "Active",
+    sample: false,
+  },
+  {
+    id: "azerbaijan",
+    slug: "azerbaijan",
+    name: "Azerbaijan Chapter",
+    country: "Azerbaijan",
+    region: "Caucasus",
+    type: "High School",
+    status: "Active",
+    sample: false,
   },
 ].map((c) => ({
   ...c,
   description:
-    "A local space for students to test ideas, build projects, and learn together. Chapter members bring their curiosity, work in teams, and turn early experiments into something they can share.",
+    "A student-led community for testing ideas, building projects, and learning together. Bring your curiosity, find collaborators, and start making something real.",
 })) as Chapter[];
-export const activeChapterCount = chapters.filter(
-  (c) => c.status === "Active",
-).length;
+// Organization-wide total supplied in the original brief. Six chapter listings have been provided;
+// the remaining four are intentionally not represented by invented school records.
+export const activeChapterCount = 10;

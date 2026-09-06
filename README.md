@@ -39,9 +39,9 @@ The network preview groups chapters geographically and caps each group at four l
 
 ## Photography and brand assets
 
-`data/site.ts` is the image replacement registry. Local JPG originals are clearly named `placeholder-...-1400x933.jpg`; their corresponding WebP sizes are 480, 800, and 1400 pixels wide. Replace both originals and run `npm run prepare-images` to regenerate the responsive variants and social preview.
+`data/site.ts` is the image registry. The four organization-supplied PNG photos and logo are preserved in `public/images/originals/`. Run `npm run prepare-images` to generate 480, 800, and 1400-pixel WebP variants, the logo mark, favicon, and social preview.
 
-The two real stock images are illustrative, not pictures of Future Founders members. Credits, source URLs, and licensing notes are in `public/images/PHOTO-CREDITS.md`. Replace them with permissioned organization photography before launch. The editable draft logo is `public/resources/future-founders-logo.svg`.
+Photography and the original navy logo were supplied by the organization on September 6, 2026. No photo is attributed to a particular school. The downloadable logo is `public/resources/future-founders-logo.png`. Poppins is self-hosted in `public/fonts` with its OFL license. Hero weight 800; headings 600; paragraphs 300 with .02em letter spacing.
 
 ## Application and contact forms
 
@@ -53,15 +53,15 @@ Review and update the preview-specific labels, confirmation text, privacy notice
 
 ## Launch checklist
 
-- Replace all **10 fictional chapter records** with verified school names, locations, and authorized chapter information. Set each real record's `sample` to `false`.
+- Six chapter records are now based on the supplied chapter list: Rock Hill, Amity Dubai, Emerson, Coppell, Nepal, Azerbaijan. Add the missing school/city details for Nepal and Azerbaijan, and the remaining four chapter listings. `activeChapterCount = 10` preserves the organization-wide total supplied in the initial brief; it is intentionally separate from the six published directory records.
 - Replace fictional competitions with verified organizer, registration, date, and eligibility information. Set `sample: false` only on verified opportunities. External competitions must never imply partnership.
 - Add approved leadership names and photos, actual chapter contacts, and confirmed events.
 - Fill in the real email addresses and social URLs in `data/site.ts`; null entries are deliberately not live links.
-- Replace illustrative photography and confirm permission to use actual student images.
+- Confirm image publication permissions for the supplied organization photographs.
 - Confirm fees, advisor requirements, affiliation requirements, and other unresolved FAQs.
 - Connect submission services and publish final privacy/terms content before collecting information.
 - Set `NEXT_PUBLIC_SITE_URL` to the verified public origin (no trailing slash). The private preview's actual hosting origin is the default for share metadata and sitemap generation.
-- Set `site.development` to `false` only after the sample directory notices and sample-specific copy have been replaced. This flag removes the global preview notice and allows indexing; directory-specific sample notices are intentionally explicit content that also needs review.
+- Set `site.development` to `false` after connecting forms, approving policies, and replacing demo competitions. This removes the global preview notice and enables indexing.
 - Rebuild and recheck the production routes, keyboard interactions, forms, and mobile layouts.
 
 ## SEO and accessibility
@@ -72,4 +72,4 @@ Semantic landmarks, visible focus rings, a skip link, native form labels and con
 
 ## Resource downloads
 
-Six starter resources are available: launch checklist, first meeting guide, recruitment guide, experiment worksheet, naming guidelines, and SVG logo. These are editable planning drafts. Remaining resources are intentionally marked Coming Soon.
+Six starter resources are available: launch checklist, first meeting guide, recruitment guide, experiment worksheet, naming guidelines, and PNG logo. These are editable planning drafts. Remaining resources are intentionally marked Coming Soon.

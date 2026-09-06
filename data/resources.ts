@@ -75,9 +75,9 @@ export const resources: Resource[] = [
     title: "Future Founders logo",
     description: "Primary wordmark and FF mark in editable vector format.",
     category: "Brand",
-    href: "/resources/future-founders-logo.svg",
+    href: "/resources/future-founders-logo.png",
     status: "Available",
-    format: "SVG",
+    format: "PNG",
   },
   {
     title: "Chapter naming guidelines",

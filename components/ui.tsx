@@ -147,8 +147,7 @@ export function CTA() {
         <div>
           <Eyebrow>MAKE IT HAPPEN AT YOUR SCHOOL</Eyebrow>
           <h2>
-            Your school
-            {" "}<br />
+            Your school <br />
             could be next<span>.</span>
           </h2>
           <p>
@@ -162,7 +161,7 @@ export function CTA() {
           </div>
         </div>
         <div className="cta-symbol" aria-hidden="true">
-          ↗
+          <Image src="/images/brand-mark.png" width={260} height={287} alt="" />
         </div>
       </div>
     </section>

@@ -1,8 +1,4 @@
 import { pageMetadata } from "@/lib/seo";
-export const metadata = {
-  ...pageMetadata("Student Entrepreneurship Network", ""),
-  title: { absolute: "Future Founders | Student Entrepreneurship Network" },
-};
 import {
   Button,
   TextLink,
@@ -17,203 +13,239 @@ import { FAQAccordion } from "@/components/faq";
 import { CompetitionCard } from "@/components/competition-card";
 import { competitions } from "@/data/competitions";
 import { pillars, programs, chapterSteps } from "@/data/programs";
+export const metadata = {
+  ...pageMetadata("Student Entrepreneurship Network", ""),
+  title: { absolute: "Future Founders | Student Entrepreneurship Network" },
+};
 export default function Home() {
   return (
     <>
-      <section className="home-hero container">
-        <div className="hero-topline">
-          <Eyebrow>THE STUDENT ENTREPRENEURSHIP NETWORK</Eyebrow>
-          <span className="edition">STUDENT-LED. FUTURE-FOCUSED.</span>
-        </div>
-        <h1>
-          Build what’s{" "}
-          <span>
-            next<span className="hero-period">.</span>
-            <svg viewBox="0 0 390 22" fill="none" aria-hidden="true">
-              <path
-                d="M4 15C104 2 272 1 383 9M12 19C131 10 246 12 350 13"
-                stroke="currentColor"
-                strokeWidth="5"
-              />
-            </svg>
-          </span>
-        </h1>
-        <div className="hero-grid">
-          <div className="hero-intro">
-            <p>
-              Find ambitious people.
-              {" "}<br />
-              Build something together.
-            </p>
-            <p className="body-copy">
-              Future Founders brings students together to build companies,
-              develop entrepreneurial skills, compete, and turn ideas into
-              something real.
-            </p>
-            <div className="button-row">
-              <Button href="/start-a-chapter">Start a Chapter</Button>
-              <TextLink href="/chapters">Find Your Chapter</TextLink>
-            </div>
-            <div className="hero-stats">
-              <div>
-                <strong>
-                  {activeChapterCount}
-                  <span className="status-dot" />
-                </strong>
-                <span>Active Chapters</span>
-              </div>
-              <div>
-                <strong>
-                  High School
-                  {" "}<br />+ College
-                </strong>
-                <span>One shared ambition</span>
-              </div>
-              <div>
-                <strong>
-                  Student
-                  {" "}<br />
-                  Led.
-                </strong>
-                <span>From day one</span>
-              </div>
-            </div>
+      <section className="founders-hero">
+        <div className="founders-hero-photo">
+          <ResponsivePhoto
+            kind="hero"
+            priority
+            sizes="(max-width: 767px) 100vw, 65vw"
+          />
+          <div className="hero-photo-caption">
+            <span>IDEAS BECOME REAL HERE.</span>
+            <span>INSIDE FUTURE FOUNDERS ↗</span>
           </div>
-          <figure className="hero-photo">
-            <ResponsivePhoto
-              kind="hero"
-              priority
-              sizes="(max-width: 768px) 100vw, 55vw"
-            />
-            <div className="photo-note">
-              <span className="photo-note-symbol" aria-hidden="true">
-                ↗
-              </span>
-              <span>
-                GOOD IDEAS START
-                {" "}<br />
-                WITH GOOD COMPANY.
-              </span>
-            </div>
-            <figcaption>
-              <span>A place for people who make things happen.</span>
-              <span>01 / THE BUILDERS</span>
-            </figcaption>
-          </figure>
+        </div>
+        <div className="founders-hero-content">
+          <Eyebrow>THE STUDENT ENTREPRENEURSHIP NETWORK</Eyebrow>
+          <h1>
+            BUILD <br />
+            WHAT’S <br />
+            <span>NEXT.</span>
+          </h1>
+          <p>
+            Find ambitious people. <br />
+            Build something together.
+          </p>
+          <div className="button-row">
+            <Button href="/start-a-chapter">Start a Chapter</Button>
+            <TextLink href="/chapters">Find Your Chapter</TextLink>
+          </div>
+        </div>
+        <div className="hero-index" aria-hidden="true">
+          01 — THE NEXT CHAPTER STARTS WITH YOU
         </div>
       </section>
-      <div
-        className="values-strip"
-        aria-label="Build. Learn. Compete. Connect. Lead."
-      >
-        <div>
-          {["BUILD", "LEARN", "COMPETE", "CONNECT", "LEAD"].map((x) => (
-            <span key={x}>
-              {x}
-              <span aria-hidden="true">✳</span>
+      <section className="network-proof" aria-label="Our network">
+        <div className="container">
+          <div>
+            <strong>{activeChapterCount}</strong>
+            <span>
+              Active <br />
+              Chapters
             </span>
-          ))}
+          </div>
+          <div>
+            <strong>HS + COLLEGE</strong>
+            <span>
+              One network. <br />
+              Many starting points.
+            </span>
+          </div>
+          <div>
+            <strong>STUDENT-LED</strong>
+            <span>
+              Your ideas. <br />
+              Your community.
+            </span>
+          </div>
+          <Link href="/join">
+            Find your place <span aria-hidden="true">↗</span>
+          </Link>
         </div>
-      </div>
-      <section className="container section network-preview">
-        <div>
-          <Eyebrow>01 / OUR CHAPTER NETWORK</Eyebrow>
+      </section>
+      <section className="container section purpose-section">
+        <Eyebrow>AMBITION NEEDS A PLACE TO GO.</Eyebrow>
+        <div className="purpose-grid">
           <h2>
-            One network.
-            {" "}<br />
-            Built across
-            {" "}<br />
-            campuses<span className="red">.</span>
+            Don’t just talk <br />
+            about the future. <br />
+            <span>Have a hand in it.</span>
+          </h2>
+          <div>
+            <p className="display-copy">
+              Future Founders brings high school and college students together
+              to turn ideas into something real.
+            </p>
+            <p className="body-copy">
+              Build a first product. Find your next teammate. Get up and pitch.
+              Through local chapters, students develop entrepreneurial skills by
+              actually putting them to work.
+            </p>
+            <TextLink href="/about">Get to know Future Founders</TextLink>
+          </div>
+        </div>
+      </section>
+      <section className="experience-section">
+        <div className="container section">
+          <div className="experience-heading">
+            <div>
+              <Eyebrow>THIS IS WHAT GETTING INVOLVED LOOKS LIKE</Eyebrow>
+              <h2>
+                Less sidelines. <br />
+                More starting lines.
+              </h2>
+            </div>
+            <TextLink href="/what-we-do">Explore the experience</TextLink>
+          </div>
+          <div className="experience-grid">
+            <Link className="experience-feature" href="/what-we-do#build">
+              <div className="experience-image">
+                <ResponsivePhoto
+                  kind="collaboration"
+                  sizes="(max-width:767px) 100vw, 58vw"
+                />
+              </div>
+              <div className="experience-caption">
+                <span>01 / BUILD TOGETHER</span>
+                <h3>
+                  Your idea. <br />
+                  Our kind of people.
+                </h3>
+                <span className="experience-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </div>
+            </Link>
+            <div className="experience-stack">
+              <Link className="experience-small" href="/what-we-do#learn">
+                <div className="experience-image">
+                  <ResponsivePhoto
+                    kind="presentation"
+                    sizes="(max-width:767px) 100vw, 35vw"
+                  />
+                </div>
+                <div>
+                  <span>02 / LEARN BY DOING</span>
+                  <h3>
+                    From “what if” to <br />
+                    “here’s what we made.”
+                  </h3>
+                  <span aria-hidden="true">↗</span>
+                </div>
+              </Link>
+              <Link className="experience-callout" href="/competitions">
+                <span>03 / TEST YOUR THINKING</span>
+                <h3>
+                  Big ideas deserve <br />a bigger stage.
+                </h3>
+                <p>Find competitions worth building for.</p>
+                <span className="experience-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="pillar-links">
+            {pillars.map((p, i) => (
+              <Link href={`/what-we-do#${p.name.toLowerCase()}`} key={p.name}>
+                <span>0{i + 1}</span>
+                <strong>{p.name}</strong>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="container section global-section">
+        <div className="global-intro">
+          <Eyebrow>ONE NETWORK. BUILT ACROSS CAMPUSES.</Eyebrow>
+          <h2>
+            A local chapter. <br />A world of <br />
+            <span>possibility.</span>
           </h2>
           <p className="body-copy">
-            Big things start locally. Ten chapters, connected by a belief that
-            students don’t need to wait to build something that matters.
+            From Texas to Dubai and beyond, students are making room for the
+            next generation of builders. Find your community, or create it.
           </p>
           <TextLink href="/chapters">Explore All Chapters</TextLink>
         </div>
         <Network />
       </section>
-      <section className="container section" style={{ paddingTop: 0 }}>
-        <div className="pillars-intro">
-          <div>
-            <Eyebrow>02 / WHAT WE DO</Eyebrow>
-            <h2>Entrepreneurship isn’t learned by watching.</h2>
-          </div>
-          <p className="body-copy">
-            You learn by making a first move. Around here, that takes a few
-            different forms.
-          </p>
-        </div>
-        <div className="pillar-list">
-          {pillars.map((p, i) => (
-            <Link
-              className="pillar-row"
-              href={"/what-we-do#" + p.name.toLowerCase()}
-              key={p.name}
-            >
-              <span>0{i + 1}</span>
-              <h3>{p.name}</h3>
-              <p>{p.description}</p>
-              <span className="arrow" aria-hidden="true">
-                ↗
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="program-section section">
+      <section className="chapter-life section">
         <div className="container">
-          <div className="section-heading">
-            <p className="section-number">03 / IN PRACTICE</p>
-            <h2>
-              Good company.
-              {" "}<br />
-              Real things to do.
-            </h2>
-            <TextLink href="/what-we-do">Inside a chapter</TextLink>
+          <div className="experience-heading">
+            <div>
+              <Eyebrow>INSIDE A CHAPTER</Eyebrow>
+              <h2>
+                Make a habit <br />
+                of making things.
+              </h2>
+            </div>
+            <p className="body-copy">
+              A meeting is a starting point. What happens next is up to the
+              people in the room.
+            </p>
           </div>
-          <div className="program-grid">
-            {programs.map((p, i) => (
-              <article className="program" key={p.name}>
+          <div className="chapter-life-grid">
+            <figure>
+              <ResponsivePhoto
+                kind="deliverables"
+                sizes="(max-width:767px) 100vw, 42vw"
+              />
+              <figcaption>Real discussions. Real next steps.</figcaption>
+            </figure>
+            <div className="program-editorial">
+              {programs.map((p, i) => (
+                <article key={p.name}>
+                  <span>0{i + 1}</span>
+                  <div>
+                    <h3>{p.name}</h3>
+                    <p>{p.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="process-grid">
+            {chapterSteps.map(([t, d], i) => (
+              <article className="process-step" key={t}>
                 <span>0{i + 1}</span>
-                <h3>{p.name}</h3>
-                <p>{p.description}</p>
+                <h3>{t}</h3>
+                <p>{d}</p>
               </article>
             ))}
           </div>
+          <TextLink href="/what-we-do">See what chapters do</TextLink>
         </div>
       </section>
       <section className="container section">
-        <div className="process-intro">
+        <div className="experience-heading">
           <div>
-            <Eyebrow>04 / A CHAPTER IN MOTION</Eyebrow>
-            <h2 style={{ marginTop: 24 }}>
-              Start small.
-              {" "}<br />
-              Keep showing up.
-            </h2>
+            <Eyebrow>OPPORTUNITIES RECOMMENDED TO MEMBERS</Eyebrow>
+            <h2>Your next challenge.</h2>
           </div>
-          <TextLink href="/what-we-do">See what chapters do</TextLink>
-        </div>
-        <div className="process-grid">
-          {chapterSteps.map(([t, d], i) => (
-            <article className="process-step" key={t}>
-              <span>0{i + 1}</span>
-              <h3>{t}</h3>
-              <p>{d}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="container section" style={{ paddingTop: 0 }}>
-        <div className="section-heading">
-          <p className="section-number">05 / GO FURTHER</p>
-          <h2>Upcoming competitions.</h2>
           <TextLink href="/competitions">See All Competitions</TextLink>
         </div>
         <p className="sample-notice">
-          Demo opportunities · Fictional examples of competitions recommended to
-          members. Registration is not available.
+          Demo opportunities · Fictional examples. Registration is not
+          available.
         </p>
         <div className="competition-grid">
           {competitions

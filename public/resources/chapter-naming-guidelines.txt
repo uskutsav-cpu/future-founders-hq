@@ -1,18 +1,18 @@
-FUTURE FOUNDERS — CHAPTER NAMING
-Draft brand guidance for review before launch.
+FUTURE FOUNDERS — CHAPTER NAMING & BRAND GUIDELINES
 
-Preferred name: Future Founders at [Verified School Name]
-Short display: [Verified School Name] Chapter
+Name: Future Founders at [Verified School Name]
+Only use a school name after chapter and school approval.
 
-Use a school's name only after authorization and chapter approval are confirmed. Follow the school's branding and organization policies. Do not use a university or school logo without permission.
+Use the supplied Future Founders logo. Preserve proportions and leave clear space around it. Do not stretch, redraw, or add effects.
 
-Keep Future Founders as two words. Use the shared FF mark as supplied and maintain clear space around it. Keep text readable; avoid adding effects or stretching the logo.
+Navy: #092B54
+Sky: #93D6F5
+White: #FFFFFF
+Light neutral: #EDF3F8
+Body secondary: #4E6277
 
-Brand palette:
-Paper #F7F6F0
-Ink #20231F
-Vermilion #DA3929
-Light sage #E7EBDF
-Citrus #E5F19A
+Font: Poppins, sans-serif
+Hero: 800. Large headings: 600. Body: 300 with 0.02em letter spacing.
+Use navy for text and primary actions. Sky works as an accent background with navy text. Keep controls and small text readable.
 
-Use ink for body text and vermilion for important actions. Verify contrast when placing text on a colored surface.
+These are working website brand guidelines, to be reviewed by the organization.

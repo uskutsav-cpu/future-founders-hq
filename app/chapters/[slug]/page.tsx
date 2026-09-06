@@ -42,13 +42,17 @@ export default async function Page({
     <>
       <Breadcrumbs current={c.name} />
       <PageHero
-        eyebrow={`${c.type.toUpperCase()} / ${c.city.toUpperCase()}`}
+        eyebrow={`${c.type.toUpperCase()} / ${(c.city || c.country).toUpperCase()}`}
         title={c.name}
       >
         <p>
-          {c.school}
-          {" "}<br />
-          {c.city}, {c.state}, {c.country}
+          {c.district && (
+            <>
+              {c.district}
+              <br />
+            </>
+          )}
+          {[c.city, c.state, c.country].filter(Boolean).join(", ")}
         </p>
       </PageHero>
       <section className="container chapter-profile">
@@ -71,8 +75,7 @@ export default async function Page({
             )}
           </div>
           <h2>
-            A place to start.
-            {" "}<br />
+            A place to start. <br />
             People to build with.
           </h2>
           <p className="body-copy">{c.description}</p>

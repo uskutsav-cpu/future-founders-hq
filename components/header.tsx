@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/data/site";
@@ -63,6 +64,15 @@ export function Header() {
   }, [open]);
   return (
     <header className={`site-header ${open ? "menu-open" : ""}`}>
+      <div className="utility-bar">
+        <div className="container">
+          <span>STUDENT-LED. BUILT TO GO FURTHER.</span>
+          <div>
+            <Link href="/chapters">Find a Chapter</Link>
+            <Link href="/resources#chapter-leaders">For Chapter Leaders ↗</Link>
+          </div>
+        </div>
+      </div>
       <div className="header-inner">
         <Link
           className="brand"
@@ -70,12 +80,16 @@ export function Header() {
           aria-label="Future Founders home"
           onClick={() => setOpen(false)}
         >
-          <span className="brand-mark" aria-hidden="true">
-            F<span>F</span>
-          </span>
+          <Image
+            className="brand-image"
+            src="/images/brand-mark.png"
+            width={52}
+            height={58}
+            alt=""
+            priority
+          />
           <span>
-            Future
-            {" "}<br />
+            Future <br />
             Founders
           </span>
         </Link>
@@ -84,7 +98,9 @@ export function Header() {
             <Link
               key={href}
               href={href}
-              aria-current={path.replace(/\/$/, "") === href ? "page" : undefined}
+              aria-current={
+                path.replace(/\/$/, "") === href ? "page" : undefined
+              }
             >
               {label}
             </Link>

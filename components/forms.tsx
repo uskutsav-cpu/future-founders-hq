@@ -233,9 +233,8 @@ export function ApplicationForm() {
       <aside className="application-sidebar">
         <p className="eyebrow">CHAPTER APPLICATION</p>
         <h1>
-          A new chapter
-          {" "}<br />
-          starts here<span className="red">.</span>
+          A new chapter <br />
+          starts here<span className="brand-accent">.</span>
         </h1>
         <ol>
           {applicationSteps.map((s, i) => (

@@ -27,7 +27,7 @@ export default function Page() {
             <p className="section-number">0{i + 1}</p>
             <h2>
               {p.name}
-              <span className="red">.</span>
+              <span className="brand-accent">.</span>
             </h2>
             <div>
               <h3>{p.line}</h3>
