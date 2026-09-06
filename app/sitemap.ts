@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
+import { legalDocuments, documentHref } from "@/data/legal-documents";
 import { chapters } from "@/data/chapters";
 export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,8 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/join",
     "/leadership",
     "/events",
-    "/privacy",
-    "/terms",
+    "/legal",
+    "/privacy-choices",
+    ...legalDocuments.map((doc) => documentHref(doc.slug)),
     ...chapters.map((c) => "/chapters/" + c.slug),
   ].map((p) => ({
     url: site.url + p + "/",

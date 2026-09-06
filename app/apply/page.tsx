@@ -1,6 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
-import { PageHero, Button, TextLink } from "@/components/ui";
-import { site } from "@/data/site";
+import { PageHero, TextLink } from "@/components/ui";
+import { ApplicationPolicyReview } from "@/components/application-policy-review";
 export const metadata = pageMetadata("Chapter application", "/apply");
 export default function Page() {
   return (
@@ -22,7 +22,7 @@ export default function Page() {
             Share why you want to lead a chapter and how you’ll bring students
             together.
           </p>
-          <Button href={site.applicationUrl}>Open Chapter Application</Button>
+          <ApplicationPolicyReview />
           <p className="handoff-note">
             You’ll continue to Google Forms to complete and submit your
             application.

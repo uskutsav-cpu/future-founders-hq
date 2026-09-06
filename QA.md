@@ -16,3 +16,13 @@
 Nepal and Azerbaijan school/city details, remaining chapter records, chapter contacts, leadership names, and confirmed opportunity/event information. The organization-wide total of 10 remains separate from the six supplied chapter listings. Owner-only access and noindex remain unchanged.
 
 No Lighthouse score or official partnership is claimed.
+
+## Legal section — September 6, 2026
+
+- Added 13 structured draft legal notices/frameworks, legal hub, privacy choices and 8 footer legal/contact links; replaced the former brief privacy/terms pages.
+- Lint, TypeScript, 9 automated tests and production build passed. Static export: 36 HTML pages, 1,931 local references checked, no missing pages/assets/anchors.
+- Inspected desktop hub and anchored privacy document at 1440px. All 15 legal-area routes checked at 375px: one expected page title, no horizontal overflow, all 8 footer links present.
+- Application checkbox starts unchecked; keyboard Space enables the exact supplied Google Forms destination, Tab reaches it with visible focus. No application submitted; external form not altered.
+- Automatic approval review blocked clearing potentially real legacy data in the user's browser. Did not retry or bypass that control. Instead tested the production clear helper against disposable storage: removes only the legacy key, retains unrelated values, reports absent data correctly and propagates blocked-storage errors to the component's error handler.
+- No browser console warnings/errors observed during reviewed legal/application pages. No new motion, trackers, cookies, databases or paid services introduced.
+- Draft policy status and missing operator/contact/age/retention details remain explicit. Source-level unknowns are null, not fictitious live addresses. Legal review, name clearance, organization adoption and operational implementation remain outstanding; see LEGAL-READINESS.md.

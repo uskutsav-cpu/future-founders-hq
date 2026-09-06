@@ -73,7 +73,8 @@ export const resources: Resource[] = [
   },
   {
     title: "Future Founders logo",
-    description: "Primary wordmark and FF mark in editable vector format.",
+    description:
+      "Supplied Future Founders logo. Use is subject to brand permission.",
     category: "Brand",
     href: "/resources/future-founders-logo.png",
     status: "Available",
@@ -98,5 +99,13 @@ export const resources: Resource[] = [
     description: "Announce a meeting, recruit members, and share your work.",
     category: "Brand",
     status: "Coming Soon",
+  },
+  {
+    title: "Chapter agreements & consent",
+    description:
+      "Review affiliation, participation, and optional media-release templates before use.",
+    category: "Chapter Leaders",
+    href: "/legal",
+    status: "Available",
   },
 ];

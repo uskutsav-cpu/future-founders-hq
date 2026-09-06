@@ -22,7 +22,7 @@ export default function Page() {
             Tell us about your school and the community you want to build. Our
             chapter application is the place to begin.
           </p>
-          <Button href={site.applicationUrl}>Apply to Start a Chapter</Button>
+          <Button href="/apply">Apply to Start a Chapter</Button>
         </article>
         <article>
           <span className="eyebrow">02 / JOIN YOUR PEOPLE</span>

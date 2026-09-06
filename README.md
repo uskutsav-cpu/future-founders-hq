@@ -47,3 +47,9 @@ The hero is a CSS bright-blue field (#0292DF) with dark navy accents (#0A2C55) w
 The Site remains an owner-only preview. Confirm the remaining chapter information, image permissions, and any organization policies. Set `site.development` to false when ready for search indexing. This flag controls crawler metadata, not visible placeholder notices. Configure a canonical domain through `NEXT_PUBLIC_SITE_URL` if changed from the existing Site URL.
 
 Verify new opportunity URLs, dates, eligibility, and organizers before adding listings. External opportunities must never imply an unconfirmed partnership. No funding, sponsorship, acceptance rate, or membership claims have been invented.
+
+## Legal content and launch readiness
+
+The `/legal` hub contains 13 structured draft notices and agreement templates, plus `/privacy-choices` with a real control to clear the earlier `ff-application-v1` browser draft. Footer links make the policies available sitewide. `/apply` acknowledges review before the supplied Google Forms handoff; this acknowledgment is intentionally not represented as saved acceptance or parental consent.
+
+Edit `data/legal-documents.ts` for document text and `data/legal-config.ts` for confirmed operator/contact facts. **Read `LEGAL-READINESS.md` before adoption:** it maps all 25 requested checklist items, records missing information, and gives Google Forms, vendor, retention, incident, media and international review steps. No legal entity, inbox, tax status, retention period, legal acceptance record or trademark registration has been fabricated. The Google Form itself has not been changed. Drafts require organization approval and qualified legal review; they are not a compliance certification. Conditional agreement templates need completion and signatures for each relevant activity.

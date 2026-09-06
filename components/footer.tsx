@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { legalFooterLinks } from "@/data/legal-config";
 import { site } from "@/data/site";
 const groups = {
   "Future Founders": [
@@ -69,10 +70,13 @@ export function Footer() {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Future Founders</span>
           <span className="footer-motto">Ideas are just the beginning.</span>
-          <div>
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
-          </div>
+          <nav className="footer-legal-links" aria-label="Legal and policies">
+            {legalFooterLinks.map(([label, href]) => (
+              <Link key={href} href={href}>
+                {label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

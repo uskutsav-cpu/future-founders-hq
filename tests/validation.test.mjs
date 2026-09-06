@@ -34,3 +34,69 @@ test("country-only chapters do not invent schools or cities", () => {
     assert.equal(c.city, undefined);
   }
 });
+
+import { legalDocuments, documentHref } from "../data/legal-documents.ts";
+import { legalConfig, legalFooterLinks } from "../data/legal-config.ts";
+test("legal documents have unique public routes, sections, and explicit review requirements", () => {
+  assert.equal(legalDocuments.length, 13);
+  assert.equal(
+    new Set(legalDocuments.map((d) => documentHref(d.slug))).size,
+    13,
+  );
+  for (const d of legalDocuments) {
+    assert.ok(d.review.length > 0);
+    assert.ok(d.sections.length > 0);
+    assert.equal(
+      new Set(d.sections.map((s) => s.title)).size,
+      d.sections.length,
+    );
+    assert.ok(d.sections.every((s) => s.paragraphs?.length || s.items?.length));
+  }
+});
+test("legal footer exposes all requested website notices and controls", () => {
+  const paths = new Set(legalFooterLinks.map(([, href]) => href));
+  for (const href of [
+    "/privacy",
+    "/terms",
+    "/cookies",
+    "/accessibility",
+    "/code-of-conduct",
+    "/privacy-choices",
+    "/contact",
+    "/legal",
+  ])
+    assert.ok(paths.has(href));
+});
+test("unconfirmed operator details cannot be mistaken for adopted legal policies", () => {
+  assert.equal(legalConfig.adopted, false);
+  assert.equal(legalConfig.effectiveDate, null);
+  assert.equal(legalConfig.operatorName, null);
+  assert.equal(legalConfig.formAcceptanceRecordingConfigured, false);
+});
+
+import { clearLegacyDraft, LEGACY_DRAFT_KEY } from "../lib/privacy-storage.ts";
+test("privacy clearing removes only the legacy draft from disposable storage", () => {
+  const values = new Map([
+    [LEGACY_DRAFT_KEY, '{"firstName":"Test"}'],
+    ["unrelated-data", "keep"],
+  ]);
+  const storage = {
+    getItem: (key) => values.get(key) ?? null,
+    removeItem: (key) => values.delete(key),
+  };
+  assert.equal(clearLegacyDraft(storage), "removed");
+  assert.equal(values.has(LEGACY_DRAFT_KEY), false);
+  assert.equal(values.get("unrelated-data"), "keep");
+  assert.equal(clearLegacyDraft(storage), "absent");
+});
+test("blocked browser storage does not report successful deletion", () => {
+  const storage = {
+    getItem: () => {
+      throw new Error("Storage denied");
+    },
+    removeItem: () => {
+      throw new Error("Must not be called");
+    },
+  };
+  assert.throws(() => clearLegacyDraft(storage), /Storage denied/);
+});
