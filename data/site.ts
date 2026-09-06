@@ -11,7 +11,11 @@ export const site = {
     string,
     string | null
   >,
-  socials: { instagram: null, linkedin: null } as Record<string, string | null>,
+  applicationUrl: "https://forms.gle/y8jjNRrDRz276wGu7",
+  socials: {
+    Instagram: "https://www.instagram.com/futurefoundershhs/",
+    TikTok: "https://www.tiktok.com/@futuref254?lang=en",
+  },
 };
 export const navigation = [
   ["About", "/about"],

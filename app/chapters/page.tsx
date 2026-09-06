@@ -29,9 +29,8 @@ export default function Page() {
           </p>
         </div>
         <p className="sample-notice">
-          Six chapter listings are available below. School details for Nepal and
-          Azerbaijan are coming soon; more listings will be added to the
-          directory.
+          Explore our chapter network below. Additional school details and
+          chapter profiles will be added as they become available.
         </p>
         <ChapterDirectory />
       </section>

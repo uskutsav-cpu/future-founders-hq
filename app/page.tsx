@@ -7,11 +7,10 @@ import {
   ResponsivePhoto,
 } from "@/components/ui";
 import Link from "next/link";
+import { site } from "@/data/site";
 import { activeChapterCount } from "@/data/chapters";
 import { Network } from "@/components/network";
 import { FAQAccordion } from "@/components/faq";
-import { CompetitionCard } from "@/components/competition-card";
-import { competitions } from "@/data/competitions";
 import { pillars, programs, chapterSteps } from "@/data/programs";
 export const metadata = {
   ...pageMetadata("Student Entrepreneurship Network", ""),
@@ -20,36 +19,22 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <section className="founders-hero">
-        <div className="founders-hero-photo">
-          <ResponsivePhoto
-            kind="hero"
-            priority
-            sizes="(max-width: 767px) 100vw, 65vw"
-          />
-          <div className="hero-photo-caption">
-            <span>IDEAS BECOME REAL HERE.</span>
-            <span>INSIDE FUTURE FOUNDERS ↗</span>
-          </div>
-        </div>
-        <div className="founders-hero-content">
+      <section className="blue-hero">
+        <div className="blue-hero-watermark" aria-hidden="true" />
+        <div className="container blue-hero-inner">
           <Eyebrow>THE STUDENT ENTREPRENEURSHIP NETWORK</Eyebrow>
           <h1>
-            BUILD <br />
-            WHAT’S <br />
-            <span>NEXT.</span>
+            BUILD WHAT’S <span>NEXT.</span>
           </h1>
-          <p>
-            Find ambitious people. <br />
-            Build something together.
-          </p>
+          <p>Find ambitious people. Build something together.</p>
           <div className="button-row">
             <Button href="/start-a-chapter">Start a Chapter</Button>
             <TextLink href="/chapters">Find Your Chapter</TextLink>
           </div>
-        </div>
-        <div className="hero-index" aria-hidden="true">
-          01 — THE NEXT CHAPTER STARTS WITH YOU
+          <div className="blue-hero-footnote">
+            <span>IDEAS ARE JUST THE BEGINNING.</span>
+            <span>HIGH SCHOOL + COLLEGE</span>
+          </div>
         </div>
       </section>
       <section className="network-proof" aria-label="Our network">
@@ -155,7 +140,7 @@ export default function Home() {
                 <h3>
                   Big ideas deserve <br />a bigger stage.
                 </h3>
-                <p>Find competitions worth building for.</p>
+                <p>Competition information is coming soon.</p>
                 <span className="experience-arrow" aria-hidden="true">
                   ↗
                 </span>
@@ -235,25 +220,44 @@ export default function Home() {
           <TextLink href="/what-we-do">See what chapters do</TextLink>
         </div>
       </section>
-      <section className="container section">
-        <div className="experience-heading">
-          <div>
-            <Eyebrow>OPPORTUNITIES RECOMMENDED TO MEMBERS</Eyebrow>
-            <h2>Your next challenge.</h2>
-          </div>
-          <TextLink href="/competitions">See All Competitions</TextLink>
+      <section className="container section opportunity-announcement">
+        <div>
+          <Eyebrow>COMPETITIONS & OPPORTUNITIES</Eyebrow>
+          <h2>
+            Something worth
+            <br /> getting ready for.
+          </h2>
         </div>
-        <p className="sample-notice">
-          Demo opportunities · Fictional examples. Registration is not
-          available.
-        </p>
-        <div className="competition-grid">
-          {competitions
-            .filter((c) => c.status !== "Closed")
-            .slice(0, 3)
-            .map((c) => (
-              <CompetitionCard key={c.id} c={c} />
-            ))}
+        <div>
+          <p>
+            Our next opportunities are taking shape. Competition details, dates,
+            and how to get involved will be announced here.
+          </p>
+          <TextLink href="/competitions">More information coming soon</TextLink>
+        </div>
+      </section>
+      <section className="social-band">
+        <div className="container">
+          <div>
+            <Eyebrow>FOLLOW THE PEOPLE BUILDING WHAT’S NEXT</Eyebrow>
+            <h2>Stay in the loop.</h2>
+          </div>
+          <div>
+            <a
+              href={site.socials.Instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href={site.socials.TikTok}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TikTok <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </section>
       <CTA />

@@ -5,14 +5,15 @@ Only use a school name after chapter and school approval.
 
 Use the supplied Future Founders logo. Preserve proportions and leave clear space around it. Do not stretch, redraw, or add effects.
 
-Navy: #092B54
-Sky: #93D6F5
+Navy: #0A2C55
+Bright blue: #0292DF
+Light blue: #D9F2FE
 White: #FFFFFF
 Light neutral: #EDF3F8
 Body secondary: #4E6277
 
 Font: Poppins, sans-serif
 Hero: 800. Large headings: 600. Body: 300 with 0.02em letter spacing.
-Use navy for text and primary actions. Sky works as an accent background with navy text. Keep controls and small text readable.
+Use navy for text and primary actions. Bright blue is the campaign background. Use white for large headings and deep navy (#061E37) for small text on bright blue. Keep controls and small text readable.
 
 These are working website brand guidelines, to be reviewed by the organization.

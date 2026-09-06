@@ -51,17 +51,17 @@ export function Footer() {
                   </Link>
                 ))}
                 {name === "Connect" &&
-                  Object.entries(site.socials).map(([name, url]) =>
-                    url ? (
-                      <a key={name} href={url} target="_blank" rel="noreferrer">
-                        {name} ↗
-                      </a>
-                    ) : (
-                      <span key={name} className="unavailable">
-                        {name === "instagram" ? "Instagram" : "LinkedIn"} · Soon
-                      </span>
-                    ),
-                  )}
+                  Object.entries(site.socials).map(([name, url]) => (
+                    <a
+                      key={name}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {name} ↗
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ))}
               </div>
             ))}
           </div>
@@ -74,12 +74,6 @@ export function Footer() {
             <Link href="/terms">Terms</Link>
           </div>
         </div>
-        {site.development && (
-          <p className="development-note">
-            Development preview · Applications and messages are saved locally,
-            not sent.
-          </p>
-        )}
       </div>
     </footer>
   );

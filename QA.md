@@ -1,21 +1,18 @@
-# Validation — September 6, 2026 redesign
+# Validation — September 6, 2026 final cleanup
 
-- Original navy logo and four supplied meeting photos replace all previous sample branding and stock photography.
-- Self-hosted Poppins: hero 800, headings 600, paragraphs 300 with .02em tracking.
-- Six user-supplied chapter profiles replace ten fictional schools. The original organization-wide total remains 10; the directory explicitly explains six available listings. Nepal and Azerbaijan have country-level details only. No people, membership counts, or school-specific photograph attribution invented.
-- Lint, TypeScript, eight validation/data tests, and production static build pass.
-- Static export link/asset/anchor checker passes across all generated HTML pages.
-- Browser checked all main routes at 375px and 1440px: no horizontal overflow or broken images. All six dynamic chapter profiles checked at desktop; Nepal country-only rendering also visually checked at 375px.
-- Homepage checked at 375, 430, 768, 1024, 1440, and 1728px. Desktop and mobile hero, menu, chapter listing/profile, and application visually inspected.
-- Mobile menu opens, closes with Escape, uses focus containment and inerts background content. Existing visible keyboard focus styles retained with the new palette.
-- Chapter district search for Prosper returns Rock Hill; College filter shows its intended empty state; clear filters restores all six listings.
-- Competition search returns one matching opportunity and the correct no-results state.
-- Application checked for required-field validation and first-to-second-step progression on mobile. Existing multi-step summary, local save, download and contact adapter architecture unchanged; full original six-step browser QA and unit validation retained.
-- Loading screen observed during navigation. Empty event, leadership, and chapter meeting states render without invented details. Reduced-motion rules cover new image hover effects and existing motion.
-- Browser console: no errors. Fixed Next.js smooth-scroll attribute warning found during navigation.
+- Hero classroom image removed; the replacement uses reference-sampled bright blue #0292DF and dark navy #0A2C55, with small, soft, repeated Future Founders logo marks. No oversized background logo remains.
+- Supplied Instagram and TikTok URLs are centralized in `data/site.ts` and used across the site.
+- Chapter application buttons lead directly to the supplied Google Form. The URL was followed read-only and returned HTTP 200 at Google Forms. No application was submitted during testing.
+- `/apply` preserves older incoming links with a clear external application handoff. The obsolete local application form and contact draft form are removed. Contact now provides functioning application, chapter, Instagram, and TikTok paths; fake contact addresses and unavailable social links are gone.
+- Fictional competitions removed from source data and homepage. The competitions route has a purposeful coming-soon announcement and social update links. The typed directory architecture remains ready for verified opportunities.
+- Four configuration/data checks cover exact external links, absence of fake competition data, chapter route uniqueness, and missing country-only school details.
+- Main routes and all six chapter profiles checked at 375px, with no horizontal overflow. Revised hero, competition announcement and application handoff visually inspected. Desktop hero and background pattern visually inspected at 1440px.
+- Keyboard-accessible navigation and visible focus styles retained. Decorative background has no accessible content or motion. Poppins is local; body 300, headings 600, hero 800. Hero body is 24px to meet large-text contrast requirements on the supplied bright blue; smaller copy uses a deeper navy.
+- Lint, TypeScript, tests, production build, and static page/asset/anchor validation run before publication.
+- Privacy and website information updated to describe external applications and social channels accurately. Previously saved browser drafts are not transmitted or silently removed.
 
-## Launch configuration still required
+## Configuration that still requires organization input
 
-Connect the application/contact backend; supply chapter contacts and leadership, missing school details, verified opportunities, approved policies and social links. Confirm the remaining chapter records and organization-wide count. The current site is intentionally an owner-only development preview with noindex.
+Nepal and Azerbaijan school/city details, remaining chapter records, chapter contacts, leadership names, and confirmed opportunity/event information. The organization-wide total of 10 remains separate from the six supplied chapter listings. Owner-only access and noindex remain unchanged.
 
-No measured Lighthouse scores are claimed.
+No Lighthouse score or official partnership is claimed.

@@ -1,3 +1,4 @@
+import { site } from "@/data/site";
 import { pageMetadata } from "@/lib/seo";
 import {
   PageHero,
@@ -21,7 +22,7 @@ export default function Page() {
             Build a community of ambitious students, lead real programs, and
             join a growing network of student entrepreneurs.
           </p>
-          <Button href="/apply">Start Your Application</Button>
+          <Button href={site.applicationUrl}>Start Your Application</Button>
         </PageHero>
         <ImagePanel
           priority
@@ -106,7 +107,7 @@ export default function Page() {
           <h2>It starts with you.</h2>
           <p>Tell us what you want to build at your school.</p>
           <div className="button-row">
-            <Button href="/apply">Start Your Application</Button>
+            <Button href={site.applicationUrl}>Start Your Application</Button>
           </div>
         </div>
       </section>

@@ -23,9 +23,8 @@ export default function Page() {
         {!hasPeople && (
           <EmptyState title="Meet the team. Soon.">
             <p>
-              Our verified leadership directory is being prepared. It will
-              introduce the national executive team and chapter presidents, with
-              advisors included when confirmed.
+              Meet the students behind our chapters and national team.
+              Leadership profiles will be added here soon.
             </p>
             <TextLink href="/contact">Get in touch</TextLink>
           </EmptyState>

@@ -1,75 +1,49 @@
 # Future Founders
 
-A complete student entrepreneurship network website built with Next.js App Router, React, TypeScript, and Tailwind CSS. The visual system uses warm paper, ink, vermilion, and a small citrus accent; layouts are editorial and chapter-first.
+Next.js App Router, React, TypeScript, Tailwind CSS. Server-rendered static pages with small client components for navigation and searchable directories. Original blue/navy identity, Poppins typography, organization-supplied logo and photography.
 
-## Run and maintain
-
-Use Node.js 22.18 or newer (Node 24 recommended).
+## Develop and validate
 
 ```sh
-npm ci
+npm install
 npm run dev
 npm run lint
 npm run typecheck
 npm test
 npm run build
+node scripts/check-export.mjs
 npm start
 ```
 
-The production build is a static export in `out/`. `npm start` previews that export locally. The project uses Next.js's supported webpack build path to avoid a Turbopack process/port limitation in the development environment. All normal pages render at build time; only navigation, directories, and forms need client state.
+`npm run build` uses the supported Next.js webpack builder and exports to `out/`. Hosting is configured in `.openai/hosting.json`. All content changes require a fresh build.
 
-## Editing content
+## Content editing
 
-| What to change | File |
-| --- | --- |
-| Chapter directory, profile content, status | `data/chapters.ts` |
-| Competition dates, eligibility, URLs | `data/competitions.ts` |
-| National and chapter events | `data/events.ts` |
-| Executive team and advisors | `data/leadership.ts` |
-| Programs, meeting rhythms, launch steps | `data/programs.ts` |
-| FAQs and unresolved policies | `data/faqs.ts` |
-| Download links and resource availability | `data/resources.ts` |
-| Form steps and validation rules | `data/application.ts` |
-| Photos, contact details, social links, preview mode | `data/site.ts` |
-| Brand colors, typography, responsive layout | `app/globals.css` |
+- `data/site.ts`: Google Forms application URL, Instagram, TikTok, photography, metadata and indexing configuration.
+- `data/chapters.ts`: six organization-supplied chapter listings. Nepal and Azerbaijan await school/city details. The organization-wide total of 10 comes from the original brief and is separate from the six supplied listings; add remaining records when available.
+- `data/competitions.ts`: empty typed opportunity collection. No fictional competitions remain. The competitions page renders its announcement state until verified listings are added, then automatically enables the directory.
+- `data/events.ts`: event records. Empty upcoming calendar is intentional.
+- `data/leadership.ts`: national team and advisors. Missing sections remain hidden.
+- `data/resources.ts`, `data/programs.ts`, `data/faqs.ts`: resources, chapter activities, and frequently asked questions.
 
-Each content file uses typed objects. Copy a record, update its fields, and give it a unique `id` and URL-friendly `slug`. Do not change a published slug without setting up a redirect at your host. Build again to publish changed content and generate new chapter pages.
+Keep chapter slugs stable once published. Only add names, member counts, accomplishments, dates, and affiliations supplied or verified by the organization.
 
-The network preview groups chapters geographically and caps each group at four links with an additional-chapters link, so it stays compact as the directory grows. Optional profile fields (people, membership counts, images, achievements, social links) render only when supplied. Leadership groups remain hidden until populated. Event times require an explicit IANA time zone.
+## Applications and contact
 
-## Photography and brand assets
+Application buttons link directly to the supplied Google Form: https://forms.gle/y8jjNRrDRz276wGu7. The `/apply` route remains a clear handoff page for older links. The obsolete local multi-step form and its submission adapter have been removed. No application responses are collected by this website.
 
-`data/site.ts` is the image registry. The four organization-supplied PNG photos and logo are preserved in `public/images/originals/`. Run `npm run prepare-images` to generate 480, 800, and 1400-pixel WebP variants, the logo mark, favicon, and social preview.
+Contact directs visitors to the application, chapter directory, Instagram, and TikTok. No fake email addresses, inactive contact form, or submission confirmation remains. Previous locally saved application drafts are not transmitted or silently deleted; the privacy page explains how to clear earlier browser site data.
 
-Photography and the original navy logo were supplied by the organization on September 6, 2026. No photo is attributed to a particular school. The downloadable logo is `public/resources/future-founders-logo.png`. Poppins is self-hosted in `public/fonts` with its OFL license. Hero weight 800; headings 600; paragraphs 300 with .02em letter spacing.
+## Assets and typography
 
-## Application and contact forms
+Poppins WOFF2 files are self-hosted under `public/fonts` with the OFL license. Hero weight 800, headings 600, paragraphs 300 with .02em tracking.
 
-This version has **no submission backend**. Both flows are explicit about that. The six-step application validates required fields, email, HTTP(S) URLs, graduation year, choices, and essay lengths; users can review and edit answers, optionally save a local draft, clear that draft, and download JSON copies. Local saving is opt-in, versioned, and restricted to recognized fields. Contact text stays in page state and can be downloaded after validation.
+Original logo and four meeting photos supplied September 6, 2026 are preserved in `public/images/originals/`. `data/site.ts` is the photo registry. `npm run prepare-images` regenerates responsive WebP photos, supplied logo crop, watermark, favicon, and social preview. Photography is not attributed to individual schools without supplied details.
 
-Connect `submitApplication` and `submitContact` in `lib/submissions.ts` to an API when ready. Validate all fields again on the server, handle errors, protect against spam, and return a real receipt before displaying success. Never put provider secrets in `NEXT_PUBLIC_*` variables. Enabling a same-origin Next.js API requires moving from static export to a supported server deployment; an external API can also be used with an appropriate configuration.
+The hero is a CSS bright-blue field (#0292DF) with dark navy accents (#0A2C55) with small, softly repeated versions of the supplied mark; the previous classroom hero has been removed. Fonts and imagery load locally without third-party widgets.
 
-Review and update the preview-specific labels, confirmation text, privacy notice, and terms at the same time as connecting live submissions. The current notices describe the implemented preview accurately; they are not final organization policies.
+## Before wider publication
 
-## Launch checklist
+The Site remains an owner-only preview. Confirm the remaining chapter information, image permissions, and any organization policies. Set `site.development` to false when ready for search indexing. This flag controls crawler metadata, not visible placeholder notices. Configure a canonical domain through `NEXT_PUBLIC_SITE_URL` if changed from the existing Site URL.
 
-- Six chapter records are now based on the supplied chapter list: Rock Hill, Amity Dubai, Emerson, Coppell, Nepal, Azerbaijan. Add the missing school/city details for Nepal and Azerbaijan, and the remaining four chapter listings. `activeChapterCount = 10` preserves the organization-wide total supplied in the initial brief; it is intentionally separate from the six published directory records.
-- Replace fictional competitions with verified organizer, registration, date, and eligibility information. Set `sample: false` only on verified opportunities. External competitions must never imply partnership.
-- Add approved leadership names and photos, actual chapter contacts, and confirmed events.
-- Fill in the real email addresses and social URLs in `data/site.ts`; null entries are deliberately not live links.
-- Confirm image publication permissions for the supplied organization photographs.
-- Confirm fees, advisor requirements, affiliation requirements, and other unresolved FAQs.
-- Connect submission services and publish final privacy/terms content before collecting information.
-- Set `NEXT_PUBLIC_SITE_URL` to the verified public origin (no trailing slash). The private preview's actual hosting origin is the default for share metadata and sitemap generation.
-- Set `site.development` to `false` after connecting forms, approving policies, and replacing demo competitions. This removes the global preview notice and enables indexing.
-- Rebuild and recheck the production routes, keyboard interactions, forms, and mobile layouts.
-
-## SEO and accessibility
-
-Each page has a title, description, sharing metadata, and canonical URL. The app includes a generated sitemap, robots.txt, favicon, local social preview image, and Organization structured data. Development mode uses `noindex` and blocks crawlers.
-
-Semantic landmarks, visible focus rings, a skip link, native form labels and controls, announced result counts, accessible validation, native FAQ disclosures, and keyboard menu handling are built in. Reduced-motion preferences disable CSS transitions and smooth form scrolling. The design is responsive from 375px to large desktop widths.
-
-## Resource downloads
-
-Six starter resources are available: launch checklist, first meeting guide, recruitment guide, experiment worksheet, naming guidelines, and PNG logo. These are editable planning drafts. Remaining resources are intentionally marked Coming Soon.
+Verify new opportunity URLs, dates, eligibility, and organizers before adding listings. External opportunities must never imply an unconfirmed partnership. No funding, sponsorship, acceptance rate, or membership claims have been invented.

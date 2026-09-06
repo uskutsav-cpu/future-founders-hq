@@ -1,63 +1,36 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { applicationSteps, validateField } from "../data/application.ts";
-import { chapters } from "../data/chapters.ts";
+import { chapters, activeChapterCount } from "../data/chapters.ts";
 import { competitions } from "../data/competitions.ts";
-const fields = applicationSteps.flatMap((s) => s.fields);
-const f = (id) => fields.find((f) => f.id === id);
-test("required names reject whitespace and optional URLs may be blank", () => {
-  assert.ok(validateField(f("firstName"), "  "));
-  assert.equal(validateField(f("website"), ""), "");
-});
-test("email validation rejects malformed and accepts ordinary student addresses", () => {
-  for (const v of ["hello", "a@", "a b@example.com"])
-    assert.ok(validateField(f("email"), v));
-  assert.equal(validateField(f("email"), "student@example.com"), "");
-});
-test("URLs allow only complete web addresses", () => {
-  for (const v of ["javascript:alert(1)", "file:///tmp/x", "not-a-url"])
-    assert.ok(validateField(f("website"), v));
-  assert.equal(validateField(f("website"), "https://example.com"), "");
-});
-test("graduation year boundaries", () => {
-  const year = new Date().getFullYear();
-  assert.ok(validateField(f("graduationYear"), String(year - 1)));
-  assert.ok(validateField(f("graduationYear"), String(year + 16)));
-  assert.ok(validateField(f("graduationYear"), "2028.5"));
-  assert.equal(validateField(f("graduationYear"), String(year + 2)), "");
-});
-test("essay validation enforces useful minimum and bounded maximum", () => {
-  assert.ok(validateField(f("why"), "short"));
-  assert.ok(validateField(f("why"), "x".repeat(2501)));
+import { site } from "../data/site.ts";
+test("application and social links exactly match organization-supplied destinations", () => {
+  assert.equal(site.applicationUrl, "https://forms.gle/y8jjNRrDRz276wGu7");
   assert.equal(
-    validateField(
-      f("why"),
-      "I want to create a useful place for students to build together.",
-    ),
-    "",
+    site.socials.Instagram,
+    "https://www.instagram.com/futurefoundershhs/",
+  );
+  assert.equal(
+    site.socials.TikTok,
+    "https://www.tiktok.com/@futuref254?lang=en",
   );
 });
-test("select values must match configured choices", () => {
-  assert.ok(validateField(f("schoolType"), "invented"));
-  assert.equal(validateField(f("schoolType"), "College"), "");
-});
-test("six supplied chapters have unique routes and no invented people or membership claims", () => {
+test("all fictional competitions have been removed", () =>
+  assert.equal(competitions.length, 0));
+test("six supplied chapter records retain unique routes without invented people or counts", () => {
   assert.equal(chapters.length, 6);
   assert.equal(new Set(chapters.map((c) => c.slug)).size, 6);
   assert.ok(
     chapters.every(
-      (c) =>
-        !c.sample &&
-        c.status === "Active" &&
-        !c.president &&
-        c.memberCount === undefined,
+      (c) => !c.sample && !c.president && c.memberCount === undefined,
     ),
   );
+  assert.equal(activeChapterCount, 10);
 });
-test("fictional competitions cannot lead to registration", () => {
-  assert.ok(competitions.every((c) => c.sample && !c.url));
-  for (const c of competitions) {
-    assert.ok(c.deadline < c.date);
-    assert.ok(!Number.isNaN(Date.parse(c.date)));
+test("country-only chapters do not invent schools or cities", () => {
+  for (const country of ["Nepal", "Azerbaijan"]) {
+    const c = chapters.find((c) => c.country === country);
+    assert.ok(c);
+    assert.equal(c.school, undefined);
+    assert.equal(c.city, undefined);
   }
 });

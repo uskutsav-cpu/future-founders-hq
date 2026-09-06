@@ -1,44 +1,47 @@
 import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/ui";
-export const metadata = pageMetadata("Preview terms", "/terms");
+export const metadata = pageMetadata("Website information", "/terms");
 export default function Page() {
   return (
     <>
       <PageHero
-        eyebrow="ABOUT THIS DEVELOPMENT SITE"
+        eyebrow="USING THIS WEBSITE"
         title="A few clear expectations."
       />
       <article className="container legal">
         <p>
-          This is a development preview of Future Founders. Formal organization
-          terms and membership policies have not been supplied and will be
-          published before public launch.
+          This website introduces Future Founders, its chapter network, and ways
+          to get involved.
         </p>
-        <h2>Sample content</h2>
+        <h2>Chapter applications</h2>
         <p>
-          Chapter names and meeting photographs were supplied by Future
-          Founders. Competition names, organizers, deadlines, and formats are
-          fictional examples. They do not establish partnerships or real
-          registration opportunities.
+          Applications are submitted through the linked Google Form. Applying
+          does not confirm chapter approval or membership. School organization
+          requirements and chapter participation details should be confirmed
+          with the relevant school and Future Founders.
+        </p>
+        <h2>Opportunities and events</h2>
+        <p>
+          Competition and event information will be published when available.
+          External opportunities, when listed, do not imply a partnership or
+          endorsement by their organizers.
+        </p>
+        <h2>Resources and brand assets</h2>
+        <p>
+          Resources are starting points for chapter planning. Adapt them to your
+          school’s requirements. Use Future Founders branding in connection with
+          authorized chapter activities and preserve the supplied logo’s
+          proportions.
         </p>
         <h2>Photography</h2>
         <p>
-          Meeting photographs and the Future Founders logo were supplied by the
-          organization. Individual photos are not attributed to a particular
-          school.
+          Meeting photographs and the logo were supplied by Future Founders.
+          Individual photographs are not attributed to specific schools.
         </p>
-        <h2>Applications and messages</h2>
+        <h2>External services</h2>
         <p>
-          Forms in this preview prepare a local copy only. They do not submit an
-          application, confirm membership, or create a commitment from Future
-          Founders.
-        </p>
-        <h2>Resources</h2>
-        <p>
-          Available resources are introductory drafts for chapter planning.
-          School approval requirements and organization policies must be
-          confirmed directly. Resources marked “Coming Soon” are not available
-          yet.
+          Google Forms, Instagram, and TikTok are separate services with their
+          own terms and privacy policies. Review those policies when using them.
         </p>
       </article>
     </>
