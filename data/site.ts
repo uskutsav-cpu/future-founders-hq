@@ -5,7 +5,7 @@ export const site = {
   // Set NEXT_PUBLIC_SITE_URL only after the organization's canonical domain is verified.
   url:
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://future-founders-network.silly-bee-5791.chatgpt.site",
+    "https://future-founders-network.utsavsresearch.chatgpt.site",
   development: true,
   emails: { general: null, chapters: null, partnerships: null } as Record<
     string,
