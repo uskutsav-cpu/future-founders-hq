@@ -113,6 +113,22 @@ export const chapters: Chapter[] = [
     sample: false,
   },
   {
+    id: "melissa",
+    slug: "melissa-high-school",
+    name: "Melissa High School",
+    school: "Melissa High School",
+    district: "Melissa ISD",
+    city: "Melissa",
+    state: "Texas",
+    country: "United States",
+    region: "North America",
+    type: "High School",
+    status: "Active",
+    sample: false,
+    schoolWebsite: "https://www.melissaisd.org/o/mhs",
+    leadership: [people.ahmed],
+  },
+  {
     id: "bangladesh",
     slug: "bangladesh",
     name: "Bangladesh Chapter",
@@ -138,6 +154,6 @@ export const chapters: Chapter[] = [
     ? "The pioneer chapter of Future Founders. Led by the founding team at Heritage High School, this is where our student-led network began. A local home for students to test ideas, build projects, and learn together."
     : "A student-led community for testing ideas, building projects, and learning together. Bring your curiosity, find collaborators, and start making something real.",
 })) as Chapter[];
-// Organization-wide total supplied in the original brief. Seven chapter listings have been provided;
-// the remaining three are intentionally not represented by invented school records.
+// Organization-wide total supplied in the original brief. Eight chapter listings have been provided;
+// the remaining two are intentionally not represented by invented school records.
 export const activeChapterCount = 10;

@@ -9,4 +9,6 @@ The organization requested these profile photos for its website on September 7, 
 - Dhaanya Lakshmi Suresh — https://www.linkedin.com/in/dhaanya-lakshmi-suresh-6347aa417/
 - Iniyann Vivekanandan Kalavathy — https://www.linkedin.com/in/iniyannv/
 
+- Ahmed Dawood — https://www.linkedin.com/in/ahmed-dawood-a53a13382/
+
 Sriram Subra: no photo or LinkedIn supplied. Initials are displayed, with no invented external link. Existing legal-readiness work remains separate; this source record is not a signed media release.

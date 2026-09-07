@@ -23,10 +23,6 @@ export default function Page() {
             together.
           </p>
           <ApplicationPolicyReview />
-          <p className="handoff-note">
-            You’ll continue to Google Forms to complete and submit your
-            application.
-          </p>
         </div>
         <aside>
           <span className="eyebrow">BEFORE YOU APPLY</span>

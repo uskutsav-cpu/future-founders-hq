@@ -36,3 +36,14 @@ No Lighthouse score or official partnership is claimed.
 - Lint, TypeScript, 11 tests and production build passed. Export checker: 37 HTML pages, 2,004 local references, zero failures.
 - Inspected the About founding-team section on desktop. Checked the Heritage mobile profile, the four president profiles and Bangladesh at 375px: correct names, portrait paths and school links, no horizontal overflow. Directory search finds Heritage with its pioneer label. No browser console warnings or errors observed.
 - Portraits are local 600px WebP assets totaling approximately 234KB. No external image hotlinks or new dependencies.
+
+## Melissa and competition calendar — September 7, 2026
+
+- Added Melissa High School in Melissa, Texas, with Ahmed Dawood as President, his supplied LinkedIn URL, an actual locally optimized profile portrait, and the official school website. Eight supplied listings remain distinct from the supplied organization-wide total of 10.
+- Read the supplied Google Form without entering or submitting data. Its title identifies the Future Founders Case Study Competition Interest Form. Calendar and list views show September 15, 2026 as the signup deadline and the competition date as To be announced. The Sign Up link opens that exact form; copy distinguishes interest from confirmed entry. Unknown eligibility, format, prizes and team details are omitted.
+- Verified month navigation, September 15 anchor, empty month, list view, search, eligibility filtering, reset and event-date sorting. Deadline status and leap-year/calendar boundaries have automated coverage.
+- Lint, TypeScript, 14 tests and production build passed. Static export validation checked 38 HTML pages and 2,057 local references with no failures.
+- Checked all 38 HTML routes at 375px and 1440px: one main heading and no horizontal overflow. No broken loaded images on mobile or observed browser console errors. Visually inspected the calendar and listing at desktop/mobile sizes.
+- Mobile menu opens, Shift+Tab wraps to its last link, and Escape closes it and returns focus to Menu. Application acknowledgment works by keyboard and enables the exact supplied chapter application destination. No forms submitted or real browser data cleared.
+- Removed redundant chapter/application copy and obsolete competition directory code. Updated homepage competition preview and privacy/terms descriptions of the interest form. No dependencies added.
+- Owner-only Site access verified unchanged before publication. Public launch still needs the legal/contact decisions in LEGAL-READINESS.md and finalized competition rules. No Lighthouse score or full legal compliance claim is made.

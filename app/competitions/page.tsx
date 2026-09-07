@@ -1,55 +1,30 @@
 import { pageMetadata } from "@/lib/seo";
-import { PageHero, TextLink, CTA } from "@/components/ui";
-import { CompetitionDirectory } from "@/components/directories";
-import { competitions } from "@/data/competitions";
-import { site } from "@/data/site";
-export const metadata = pageMetadata("Competitions", "/competitions");
+import { PageHero, TextLink } from "@/components/ui";
+import { CompetitionCalendar } from "@/components/competition-calendar";
+export const metadata = pageMetadata(
+  "Upcoming competitions",
+  "/competitions",
+  "Explore the Future Founders competition calendar. Sign up for the Case Study Competition by September 15, 2026. Competition date to be announced.",
+);
 export default function Page() {
   return (
     <>
-      <PageHero
-        eyebrow="COMPETITIONS & OPPORTUNITIES"
-        title="Get ready for what’s next."
-      >
+      <PageHero eyebrow="TEST YOUR THINKING" title="Upcoming competitions.">
         <p>
-          A chance to test your ideas, work with a team, and take your thinking
-          further.
+          Find your next challenge. Keep track of deadlines. Take the first
+          step.
         </p>
       </PageHero>
-      <section className="container directory-section">
-        {competitions.length ? (
-          <CompetitionDirectory />
-        ) : (
-          <div className="announcement-panel">
-            <div className="announcement-rule" aria-hidden="true" />
-            <p className="eyebrow">MORE INFORMATION COMING SOON</p>
-            <h2>
-              The next challenge
-              <br />
-              is taking shape.
-            </h2>
-            <p>
-              We’ll share competition details, eligibility, dates, and how to
-              participate here when opportunities are announced. Follow Future
-              Founders for updates.
-            </p>
-            <div className="button-row">
-              <TextLink href={site.socials.Instagram}>
-                Follow on Instagram
-              </TextLink>
-              <TextLink href={site.socials.TikTok}>Find us on TikTok</TextLink>
-            </div>
-          </div>
-        )}
+      <section className="container competition-section">
+        <CompetitionCalendar />
       </section>
-      <section className="container section small-callout">
-        <div>
-          <h2>In the meantime, start building.</h2>
-          <p>Find your chapter and put your next idea into motion.</p>
-        </div>
-        <TextLink href="/chapters">Find your chapter</TextLink>
+      <section className="container competition-footer-note">
+        <p>
+          Competition dates, eligibility, format, and full rules will be
+          published as they are confirmed.
+        </p>
+        <TextLink href="/contact">Questions? Get in touch</TextLink>
       </section>
-      <CTA />
     </>
   );
 }

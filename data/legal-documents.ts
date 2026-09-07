@@ -36,6 +36,7 @@ export const legalDocuments: LegalDocument[] = [
           "Applications: the website sends applicants to a Google Form. That form may request identity/contact details, school or graduation information, leadership experience and application answers. Its exact fields, required/optional settings and account owner must be verified; this page does not claim an exhaustive form inventory.",
           "Communications: information voluntarily shared through Instagram or TikTok is processed by those services. Organization personnel receiving messages may use them to respond or route an inquiry. Access and retention arrangements need confirmation.",
           "Photographs and chapter profiles: supplied photographs, school/location details, and any later approved names or biographies are published to describe chapter activities. Publication requires the relevant permissions.",
+          "Competition interest: the linked Case Study Competition interest form asks for name, school and grade so the organizer can plan participation and next steps. The website does not receive these answers; response access, retention and sharing settings still need an owner review.",
           "Earlier drafts: a previous website version could store an application draft in this browser under ff-application-v1. Current pages do not read or transmit it. It remains until cleared by the user or browser.",
         ],
       },
@@ -148,7 +149,7 @@ export const legalDocuments: LegalDocument[] = [
       {
         title: "Third-party services",
         paragraphs: [
-          "Applications are hosted on Google Forms. Instagram, TikTok and future external opportunity links are separate services with their own terms and privacy practices. A link does not make its provider a partner or mean that the organization controls its content.",
+          "Chapter applications and competition expressions of interest are hosted on Google Forms. Instagram, TikTok and future external opportunity links are separate services with their own terms and privacy practices. A link does not make its provider a partner or mean that the organization controls its content.",
         ],
       },
       {
@@ -455,7 +456,7 @@ export const legalDocuments: LegalDocument[] = [
     description:
       "A complete outline to finalize separately for each announced competition.",
     review: [
-      "No organization-run competition is currently announced. This is not a live contest or official rules for an external competition.",
+      "The Case Study Competition is collecting expressions of interest. Its full official rules and event date are not yet published; this framework is not its finalized rules.",
     ],
     sections: [
       {
@@ -596,7 +597,7 @@ export const legalDocuments: LegalDocument[] = [
       {
         title: "Accuracy and endorsements",
         paragraphs: [
-          "Publish only supported chapter counts, membership statistics, awards, outcomes, testimonials and partner claims. Keep the source, date, permission and qualification with each claim. Disclose relevant material relationships behind endorsements. The current total of 10 active chapters came from the organization’s brief; seven chapter listings have been supplied. The organization should document the total before public claims are finalized.",
+          "Publish only supported chapter counts, membership statistics, awards, outcomes, testimonials and partner claims. Keep the source, date, permission and qualification with each claim. Disclose relevant material relationships behind endorsements. The current total of 10 active chapters came from the organization’s brief; eight chapter listings have been supplied. The organization should document the total before public claims are finalized.",
         ],
       },
       {

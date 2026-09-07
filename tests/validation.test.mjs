@@ -1,7 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { chapters, activeChapterCount } from "../data/chapters.ts";
-import { competitions } from "../data/competitions.ts";
+import {
+  competitions,
+  formatDate,
+  calendarDays,
+  shiftMonth,
+  competitionStatus,
+} from "../data/competitions.ts";
 import { site } from "../data/site.ts";
 test("application and social links exactly match organization-supplied destinations", () => {
   assert.equal(site.applicationUrl, "https://forms.gle/y8jjNRrDRz276wGu7");
@@ -14,11 +20,13 @@ test("application and social links exactly match organization-supplied destinati
     "https://www.tiktok.com/@futuref254?lang=en",
   );
 });
-test("all fictional competitions have been removed", () =>
-  assert.equal(competitions.length, 0));
-test("seven supplied chapter records retain unique routes without invented member counts", () => {
-  assert.equal(chapters.length, 7);
-  assert.equal(new Set(chapters.map((c) => c.slug)).size, 7);
+test("only the announced competition is listed", () => {
+  assert.equal(competitions.length, 1);
+  assert.ok(competitions.every((c) => !c.sample));
+});
+test("eight supplied chapter records retain unique routes without invented member counts", () => {
+  assert.equal(chapters.length, 8);
+  assert.equal(new Set(chapters.map((c) => c.slug)).size, 8);
   assert.ok(
     chapters.every(
       (c) => !c.sample && !c.president && c.memberCount === undefined,
@@ -122,6 +130,7 @@ test("school websites are separate from chapter joining destinations and have no
     ["amity-school-dubai", "https://amityschooldubai.com/"],
     ["emerson-high-school", "https://www.friscoisd.org/o/ehs"],
     ["coppell-high-school", "https://www.coppellisd.com/o/chs"],
+    ["melissa-high-school", "https://www.melissaisd.org/o/mhs"],
   ]);
   for (const [slug, url] of expected) {
     const chapter = chapters.find((c) => c.slug === slug);
@@ -129,4 +138,35 @@ test("school websites are separate from chapter joining destinations and have no
     assert.notEqual(chapter.website, url);
   }
   assert.ok(!chapters.some((c) => c.country === "Nepal" || c.slug === "nepal"));
+});
+
+test("Case Study signup preserves the supplied deadline and does not invent an event date", () => {
+  const c = competitions[0];
+  assert.equal(c.title, "Future Founders Case Study Competition");
+  assert.equal(c.deadline, "2026-09-15");
+  assert.equal(c.url, "https://forms.gle/6bdRrYmCuqYPuePC6");
+  assert.equal(c.date, undefined);
+  assert.equal(formatDate(c.date), "To be announced");
+  assert.equal(competitionStatus(c, "2026-09-15"), "Upcoming");
+  assert.equal(competitionStatus(c, "2026-09-16"), "Closed");
+});
+test("calendar aligns September 15 correctly and handles leap years and year boundaries", () => {
+  const september = calendarDays("2026-09");
+  assert.equal(september.indexOf("2026-09-15") % 7, 2);
+  assert.equal(september.filter(Boolean).length, 30);
+  assert.equal(september.length % 7, 0);
+  assert.ok(calendarDays("2028-02").includes("2028-02-29"));
+  assert.equal(shiftMonth("2026-12", 1), "2027-01");
+  assert.equal(shiftMonth("2026-01", -1), "2025-12");
+});
+test("Melissa has the supplied president, location and portrait", () => {
+  const c = chapters.find((c) => c.slug === "melissa-high-school");
+  assert.equal(c.city, "Melissa");
+  assert.equal(c.state, "Texas");
+  assert.equal(c.leadership[0].name, "Ahmed Dawood");
+  assert.equal(
+    c.leadership[0].linkedin,
+    "https://www.linkedin.com/in/ahmed-dawood-a53a13382/",
+  );
+  assert.equal(c.leadership[0].image, "/images/leadership/ahmed-dawood.webp");
 });

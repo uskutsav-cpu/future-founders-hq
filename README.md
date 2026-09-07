@@ -20,17 +20,17 @@ npm start
 ## Content editing
 
 - `data/site.ts`: Google Forms application URL, Instagram, TikTok, photography, metadata and indexing configuration.
-- `data/chapters.ts`: seven organization-supplied chapter listings. Bangladesh and Azerbaijan await school/city details. The organization-wide total of 10 comes from the original brief and is separate from the seven supplied listings; add remaining records when available.
-- `data/competitions.ts`: empty typed opportunity collection. No fictional competitions remain. The competitions page renders its announcement state until verified listings are added, then automatically enables the directory.
+- `data/chapters.ts`: eight organization-supplied chapter listings. Bangladesh and Azerbaijan await school/city details. The organization-wide total of 10 comes from the original brief and is separate from the eight supplied listings; add remaining records when available.
+- `data/competitions.ts`: announced competitions, optional event dates and confirmed signup links. The calendar distinguishes signup deadlines from competition dates, supports month navigation, list view, search, filters and deadline/date sorting. Case Study Competition signup deadline: September 15, 2026; event date TBA. The linked Google Form records interest, not confirmed competition entry.
 - `data/events.ts`: event records. Empty upcoming calendar is intentional.
-- `data/leadership.ts`: shared people records, founding team, national team and advisors. Chapter and About profiles share the same records. Add approved local portrait paths to `image`; initials appear until a portrait is supplied. Six supplied LinkedIn profiles have verified display names and locally optimized portraits; Sriram uses initials until his photo is supplied.
+- `data/leadership.ts`: shared people records, founding team, national team and advisors. Chapter and About profiles share the same records. Add approved local portrait paths to `image`; initials appear until a portrait is supplied. Seven supplied LinkedIn profiles have verified display names and locally optimized portraits; Sriram uses initials until his photo is supplied.
 - `data/resources.ts`, `data/programs.ts`, `data/faqs.ts`: resources, chapter activities, and frequently asked questions.
 
 Keep chapter slugs stable once published. Only add names, member counts, accomplishments, dates, and affiliations supplied or verified by the organization.
 
 ## Applications and contact
 
-Application buttons link directly to the supplied Google Form: https://forms.gle/y8jjNRrDRz276wGu7. The `/apply` route remains a clear handoff page for older links. The obsolete local multi-step form and its submission adapter have been removed. No application responses are collected by this website.
+Chapter application buttons route through `/apply` for policy review and then to the supplied Google Form: https://forms.gle/y8jjNRrDRz276wGu7. Competition signup goes to https://forms.gle/6bdRrYmCuqYPuePC6. The obsolete local multi-step form and its submission adapter have been removed. No application responses are collected by this website.
 
 Contact directs visitors to the application, chapter directory, Instagram, and TikTok. No fake email addresses, inactive contact form, or submission confirmation remains. Previous locally saved application drafts are not transmitted or silently deleted; the privacy page explains how to clear earlier browser site data.
 

@@ -1,3 +1,4 @@
+import { competitions, formatDate } from "@/data/competitions";
 import { pageMetadata } from "@/lib/seo";
 import {
   Button,
@@ -140,7 +141,7 @@ export default function Home() {
                 <h3>
                   Big ideas deserve <br />a bigger stage.
                 </h3>
-                <p>Competition information is coming soon.</p>
+                <p>Explore the Case Study Competition.</p>
                 <span className="experience-arrow" aria-hidden="true">
                   ↗
                 </span>
@@ -224,16 +225,17 @@ export default function Home() {
         <div>
           <Eyebrow>COMPETITIONS & OPPORTUNITIES</Eyebrow>
           <h2>
-            Something worth
-            <br /> getting ready for.
+            Case Study
+            <br />
+            Competition.
           </h2>
         </div>
         <div>
           <p>
-            Our next opportunities are taking shape. Competition details, dates,
-            and how to get involved will be announced here.
+            Sign up by {formatDate(competitions[0]?.deadline)}. Competition
+            date: to be announced.
           </p>
-          <TextLink href="/competitions">More information coming soon</TextLink>
+          <TextLink href="/competitions">View competition & sign up</TextLink>
         </div>
       </section>
       <section className="social-band">

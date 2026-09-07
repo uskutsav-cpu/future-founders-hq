@@ -2,8 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { chapters } from "@/data/chapters";
-import { competitions } from "@/data/competitions";
-import { CompetitionCard } from "@/components/competition-card";
 export function ChapterDirectory() {
   const [q, setQ] = useState("");
   const [type, setType] = useState("All");
@@ -108,125 +106,6 @@ export function ChapterDirectory() {
           >
             Clear filters →
           </button>
-        </div>
-      )}
-    </div>
-  );
-}
-export function CompetitionDirectory() {
-  const [q, setQ] = useState("");
-  const [eligibility, setEligibility] = useState("All");
-  const [format, setFormat] = useState("All");
-  const [category, setCategory] = useState("All");
-  const [status, setStatus] = useState("All");
-  const [sort, setSort] = useState("deadline");
-  const filtered = competitions
-    .filter(
-      (c) =>
-        c.title.toLowerCase().includes(q.toLowerCase()) &&
-        (eligibility === "All" ||
-          c.eligibility === eligibility ||
-          (c.eligibility === "Both" && eligibility !== "Both")) &&
-        (format === "All" || c.format === format) &&
-        (category === "All" || c.category === category) &&
-        (status === "All" || c.status === status),
-    )
-    .sort((a, b) =>
-      (sort === "deadline" ? a.deadline : a.date).localeCompare(
-        sort === "deadline" ? b.deadline : b.date,
-      ),
-    );
-  const reset = () => {
-    setQ("");
-    setEligibility("All");
-    setFormat("All");
-    setCategory("All");
-    setStatus("All");
-  };
-  return (
-    <div>
-      <div className="competition-filters">
-        <div className="search-field">
-          <label htmlFor="competition-search" className="sr-only">
-            Search competitions
-          </label>
-          <span aria-hidden="true">⌕</span>
-          <input
-            id="competition-search"
-            type="search"
-            placeholder="Search competitions"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
-        </div>
-        <div className="select-filters">
-          {[
-            {
-              label: "Eligibility",
-              value: eligibility,
-              set: setEligibility,
-              options: ["All", "High School", "College", "Both"],
-            },
-            {
-              label: "Format",
-              value: format,
-              set: setFormat,
-              options: ["All", "Online", "In Person", "Hybrid"],
-            },
-            {
-              label: "Type",
-              value: category,
-              set: setCategory,
-              options: [
-                "All",
-                "Pitch",
-                "Entrepreneurship",
-                "Investment",
-                "Case",
-                "Economics",
-                "Innovation",
-                "Business",
-                "Technology",
-              ],
-            },
-            {
-              label: "Status",
-              value: status,
-              set: setStatus,
-              options: ["All", "Open", "Upcoming", "Closed"],
-            },
-          ].map((f) => (
-            <label key={f.label}>
-              {f.label}
-              <select value={f.value} onChange={(e) => f.set(e.target.value)}>
-                {f.options.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-            </label>
-          ))}
-        </div>
-      </div>
-      <div className="results-meta">
-        <span aria-live="polite">{filtered.length} opportunities</span>
-        <label>
-          Sort by{" "}
-          <select value={sort} onChange={(e) => setSort(e.target.value)}>
-            <option value="deadline">Soonest deadline</option>
-            <option value="date">Event date</option>
-          </select>
-        </label>
-      </div>
-      <div className="competition-grid">
-        {filtered.map((c) => (
-          <CompetitionCard key={c.id} c={c} />
-        ))}
-      </div>
-      {!filtered.length && (
-        <div className="filter-empty">
-          <h3>No matches this time.</h3>
-          <p>Try a different combination of filters.</p>
-          <button onClick={reset}>Clear filters →</button>
         </div>
       )}
     </div>

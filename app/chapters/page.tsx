@@ -28,10 +28,6 @@ export default function Page() {
             Built and led by students.
           </p>
         </div>
-        <p className="sample-notice">
-          Explore our chapter network below. Additional school details and
-          chapter profiles will be added as they become available.
-        </p>
         <ChapterDirectory />
       </section>
       <section className="container section">

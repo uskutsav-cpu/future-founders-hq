@@ -11,7 +11,7 @@ Prepared September 6, 2026 · Version 2026-09-06-draft-1
 - Confirm online age eligibility. The checklist proposes 13+, but the owner has not confirmed that policy. Separately assess child-directed content, actual knowledge, COPPA applicability, and international child-consent rules. Do not collect children's information until applicable arrangements are in place.
 - Confirm what the Google Form actually asks, who controls it, who accesses responses, linked Sheets/exports, required fields, collection purposes, notices, retention and deletion. The form was linked, not modified or audited.
 - Review name and trademark clearance. An existing youth entrepreneurship organization uses **Future Founders** at https://www.futurefounders.com/. This is a material naming-review issue, not a conclusion about ownership, registration, infringement, or whether the name can lawfully be used. Do not add ® or claim registration without verification.
-- Verify permissions for the supplied logo, all photos, school names/recognition, chapter claims and later testimonials. Existing images are owner-supplied; release records were not supplied or validated. The 10-chapter headline comes from the owner's instruction; the directory contains seven supplied records, not ten invented schools.
+- Verify permissions for the supplied logo, all photos, school names/recognition, chapter claims and later testimonials. Existing images are owner-supplied; release records were not supplied or validated. The 10-chapter headline comes from the owner's instruction; the directory contains eight supplied records, not ten invented schools.
 
 Enter confirmed identity/contact information in `data/legal-config.ts`. Review **all document copy**, including explicit unresolved-detail statements in `data/legal-documents.ts`, before adopting anything. Updating a boolean alone does not make drafts accurate. Set a real effective date/version only after approval; archive prior versions and acceptance records. Conditional templates need their own activity-specific completion and approval even if website notices are adopted. The global draft flag should remain false until every exposed document's status is correctly represented; split document statuses before adopting only a subset.
 
@@ -29,7 +29,7 @@ Enter confirmed identity/contact information in `data/legal-config.ts`. Review *
 | 8 | Chapter affiliation | `/legal/chapter-agreement` | Complete school/operator facts, approvals, governance, money rules and signatures |
 | 9 | Participation / parent consent | `/legal/participant-consent` | Activity-specific supervision, guardian permissions, travel and medical protocols; counsel-reviewed releases |
 | 10 | Media release | `/legal/media-release` | Obtain granular permissions; maintain a permission register and withdrawal process |
-| 11 | Competition rules | `/legal/competition-rules` | Complete and publish rules before any organization-run competition; none announced now |
+| 11 | Competition rules | `/legal/competition-rules` | Complete and publish rules before any organization-run competition; Case Study Competition interest signup announced; full official rules pending |
 | 12 | Refund/cancellation | `/legal/refunds` | No checkout now; publish specific terms before collecting fees |
 | 13 | Donations | `/legal/donations` | No donation checkout now; legal recipient, tax status, solicitation rules and disclosures |
 | 14 | Email marketing | `/legal/communications` | No signup now; review applicability, postal details, unsubscribe and suppression before launch |

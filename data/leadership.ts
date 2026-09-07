@@ -10,6 +10,13 @@ export type Person = {
 // Profile names and portraits read from the exact supplied LinkedIn URLs.
 // Sriram has no supplied LinkedIn or portrait; keep his initials fallback.
 export const people = {
+  ahmed: {
+    id: "ahmed-dawood",
+    name: "Ahmed Dawood",
+    role: "President",
+    image: "/images/leadership/ahmed-dawood.webp",
+    linkedin: "https://www.linkedin.com/in/ahmed-dawood-a53a13382/",
+  },
   utsav: {
     id: "utsav-sunil-kumar",
     image: "/images/leadership/utsav-sunil-kumar.webp",
