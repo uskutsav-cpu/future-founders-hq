@@ -68,6 +68,7 @@ export function Header() {
         <div className="container">
           <span>STUDENT-LED. BUILT TO GO FURTHER.</span>
           <div>
+            <Link href="/applications">Applications</Link>
             <Link href="/chapters">Find a Chapter</Link>
             <Link href="/resources#chapter-leaders">For Chapter Leaders ↗</Link>
           </div>
@@ -141,6 +142,9 @@ export function Header() {
             </Link>
           ))}
           <div className="mobile-actions">
+            <Link href="/applications" onClick={() => setOpen(false)}>
+              Applications & internships →
+            </Link>
             <Link href="/start-a-chapter" onClick={() => setOpen(false)}>
               Start a Chapter →
             </Link>

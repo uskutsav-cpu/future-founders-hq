@@ -13,7 +13,7 @@ test("application and social links exactly match organization-supplied destinati
   assert.equal(site.applicationUrl, "https://forms.gle/y8jjNRrDRz276wGu7");
   assert.equal(
     site.socials.Instagram,
-    "https://www.instagram.com/futurefoundershhs/",
+    "https://www.instagram.com/joinfuturefounders/",
   );
   assert.equal(
     site.socials.TikTok,
@@ -115,11 +115,11 @@ test("Heritage is the pioneer chapter and shares the three founding Co-President
   assert.equal(heritage.pioneer, true);
   assert.deepEqual(
     heritage.leadership.map((p) => p.name),
-    ["Utsav Sunil Kumar", "Akshay Datta Kolluru", "Sriram Subra"],
+    ["Utsav Sunil Kumar", "Akshay Datta Kolluru", "Sriram Subramanium"],
   );
   assert.ok(heritage.leadership.every((p) => p.role === "Co-President"));
   assert.equal(
-    heritage.leadership.find((p) => p.name === "Sriram Subra").linkedin,
+    heritage.leadership.find((p) => p.name === "Sriram Subramanium").linkedin,
     undefined,
   );
 });
@@ -169,4 +169,20 @@ test("Melissa has the supplied president, location and portrait", () => {
     "https://www.linkedin.com/in/ahmed-dawood-a53a13382/",
   );
   assert.equal(c.leadership[0].image, "/images/leadership/ahmed-dawood.webp");
+});
+
+test("student role keeps the owner deadline and verified form details", async () => {
+  const { opportunities, opportunityClosed } =
+    await import("../data/opportunities.ts");
+  const role = opportunities[0];
+  assert.equal(role.title, "Social Media Intern");
+  assert.equal(role.deadline, "2026-09-20");
+  assert.equal(role.arrangement, "Remote");
+  assert.equal(role.commitment, "1–3 hours per week");
+  assert.equal(
+    new URL(role.applicationUrl).pathname,
+    "/forms/d/e/1FAIpQLSeH6bA2OlGV8Tt_F0qUtGCJNQJ7sz_C6Guw4vz-r0aQK2BUGg/viewform",
+  );
+  assert.equal(opportunityClosed(role, "2026-09-20"), false);
+  assert.equal(opportunityClosed(role, "2026-09-21"), true);
 });

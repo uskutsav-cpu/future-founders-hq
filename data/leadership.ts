@@ -8,7 +8,7 @@ export type Person = {
 };
 // Leadership roles and profile URLs supplied by the organization September 7, 2026.
 // Profile names and portraits read from the exact supplied LinkedIn URLs.
-// Sriram has no supplied LinkedIn or portrait; keep his initials fallback.
+// Sriram’s name and portrait supplied directly by the organization; no LinkedIn supplied.
 export const people = {
   ahmed: {
     id: "ahmed-dawood",
@@ -31,7 +31,12 @@ export const people = {
     role: "Co-President",
     linkedin: "https://www.linkedin.com/in/akshay-kolluru/",
   },
-  sriram: { id: "sriram-subra", name: "Sriram Subra", role: "Co-President" },
+  sriram: {
+    id: "sriram-subra",
+    name: "Sriram Subramanium",
+    role: "Co-President",
+    image: "/images/leadership/sriram-subramanium.webp",
+  },
   himangi: {
     id: "himangi-joshi",
     image: "/images/leadership/himangi-joshi.webp",

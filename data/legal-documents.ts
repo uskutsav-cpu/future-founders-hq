@@ -37,6 +37,7 @@ export const legalDocuments: LegalDocument[] = [
           "Communications: information voluntarily shared through Instagram or TikTok is processed by those services. Organization personnel receiving messages may use them to respond or route an inquiry. Access and retention arrangements need confirmation.",
           "Photographs and chapter profiles: supplied photographs, school/location details, and any later approved names or biographies are published to describe chapter activities. Publication requires the relevant permissions.",
           "Competition interest: the linked Case Study Competition interest form asks for name, school and grade so the organizer can plan participation and next steps. The website does not receive these answers; response access, retention and sharing settings still need an owner review.",
+          "Student roles: the Social Media Intern application is an external Google Form. Its first page asks for name, email, school/grade, an optional social or portfolio link, interests, skills and a content idea. The website does not collect those answers; the form owner must review the full form, response access and retention before adopting this notice.",
           "Earlier drafts: a previous website version could store an application draft in this browser under ff-application-v1. Current pages do not read or transmit it. It remains until cleared by the user or browser.",
         ],
       },
@@ -149,7 +150,7 @@ export const legalDocuments: LegalDocument[] = [
       {
         title: "Third-party services",
         paragraphs: [
-          "Chapter applications and competition expressions of interest are hosted on Google Forms. Instagram, TikTok and future external opportunity links are separate services with their own terms and privacy practices. A link does not make its provider a partner or mean that the organization controls its content.",
+          "Chapter applications, student role applications and competition expressions of interest are hosted on Google Forms. Instagram, TikTok and future external opportunity links are separate services with their own terms and privacy practices. A link does not make its provider a partner or mean that the organization controls its content.",
         ],
       },
       {

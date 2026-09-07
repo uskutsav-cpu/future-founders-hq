@@ -35,13 +35,13 @@ export default function Page() {
       </section>
       <section className="container small-callout section">
         <div>
-          <h2>Still finding your way?</h2>
+          <h2>Join the team.</h2>
           <p>
-            Tell us what you’re interested in and we’ll help you find a starting
-            point.
+            Explore student roles and help build Future Founders beyond your
+            chapter.
           </p>
         </div>
-        <TextLink href="/contact">Talk to us</TextLink>
+        <TextLink href="/applications">View applications</TextLink>
       </section>
       <FAQAccordion indices={[1, 2, 7, 8]} />
     </>

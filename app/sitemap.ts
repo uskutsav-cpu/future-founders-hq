@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/start-a-chapter",
     "/apply",
+    "/applications",
     "/join",
     "/leadership",
     "/events",

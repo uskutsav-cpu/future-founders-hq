@@ -12,3 +12,5 @@ The organization requested these profile photos for its website on September 7, 
 - Ahmed Dawood — https://www.linkedin.com/in/ahmed-dawood-a53a13382/
 
 Sriram Subra: no photo or LinkedIn supplied. Initials are displayed, with no invented external link. Existing legal-readiness work remains separate; this source record is not a signed media release.
+
+- Sriram Subramanium: organization-supplied portrait, September 7, 2026. Cropped and resized to a local 600px WebP; no synthetic alteration. LinkedIn not supplied.

@@ -1,3 +1,4 @@
+import { ApplicationNotice } from "@/components/application-opportunity";
 import { competitions, formatDate } from "@/data/competitions";
 import { pageMetadata } from "@/lib/seo";
 import {
@@ -38,6 +39,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ApplicationNotice />
       <section className="network-proof" aria-label="Our network">
         <div className="container">
           <div>
@@ -92,10 +94,10 @@ export default function Home() {
         <div className="container section">
           <div className="experience-heading">
             <div>
-              <Eyebrow>THIS IS WHAT GETTING INVOLVED LOOKS LIKE</Eyebrow>
+              <Eyebrow>THE FUTURE FOUNDERS EXPERIENCE</Eyebrow>
               <h2>
-                Less sidelines. <br />
-                More starting lines.
+                Build skills. <br />
+                Put them to work.
               </h2>
             </div>
             <TextLink href="/what-we-do">Explore the experience</TextLink>

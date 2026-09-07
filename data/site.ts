@@ -11,7 +11,7 @@ export const site = {
   >,
   applicationUrl: "https://forms.gle/y8jjNRrDRz276wGu7",
   socials: {
-    Instagram: "https://www.instagram.com/futurefoundershhs/",
+    Instagram: "https://www.instagram.com/joinfuturefounders/",
     TikTok: "https://www.tiktok.com/@futuref254?lang=en",
   },
 };

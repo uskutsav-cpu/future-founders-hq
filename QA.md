@@ -58,3 +58,13 @@ No Lighthouse score or official partnership is claimed.
 - Browser checks under Cloudflare runtime: desktop navigation, correct Poppins font, 375px calendar, mobile menu/Escape, application checkbox enabling the exact external link, Melissa profile/photo loading. No observed console warnings/errors or horizontal overflow. No forms submitted.
 - Scanned all reachable Git history blobs for common credential patterns: no findings across 343 history objects. Only .env.example tracked; no required application secrets. Git ignore checks cover environment files, Wrangler local state and private key formats. This pattern scan is not a claim of exhaustive secret detection.
 - Cloudflare authentication is unavailable in Wrangler and browser. No Cloudflare deployment, domain binding, nameserver change, integration authorization or paid plan action performed. Apex and www failed DNS resolution. DEPLOYMENT.md records exact remaining account/domain steps without invented account IDs, workers.dev URLs or assigned nameservers.
+
+## Student role and portrait update — September 7, 2026
+
+- Replaced Instagram centrally with joinfuturefounders; both homepage and footer destinations verified. Old handle is absent from current product source/tests.
+- Added the supplied Sriram Subramanium portrait as a 600px local WebP. Shared record updates About, Leadership and Heritage; no LinkedIn URL invented. Verified actual image loading in the Heritage profile.
+- Added /applications with the Social Media Intern role, Remote arrangement and 1–3 hours/week verified on the supplied form. Owner's September 20, 2026 deadline overrides the form's older September 15. Form also contains a differently spelled website domain; neither discrepancy was copied or silently edited on Google Forms. No compensation, selection or eligibility policy invented.
+- Homepage announcement, desktop utility link, mobile menu, footer and Join page lead to applications. Announcement expires after the deadline; role page retains a clear closed-deadline state. Google Forms remains external; no submission or applicant data collection on this website.
+- Polish is limited to the role layout, a restrained announcement strip, and more direct experience copy; original hero, colors, fonts and page structure retained.
+- Lint, TypeScript, 15 tests and production build passed. Static export: 39 HTML pages, 2,188 local references, no failures. Production metadata/robots/sitemap checks passed for 36 indexable pages.
+- Desktop applications composition and 375px layout checked; mobile menu closes after application navigation, homepage View role works, new Instagram links and exact application URL verified. No observed console errors/warnings or horizontal overflow. No external forms submitted.

@@ -14,6 +14,7 @@ const groups = {
     ["Chapter Resources", "/resources#chapter-leaders"],
   ],
   Opportunities: [
+    ["Applications", "/applications"],
     ["Competitions", "/competitions"],
     ["Events", "/events"],
     ["Resources", "/resources"],
