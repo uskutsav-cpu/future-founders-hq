@@ -2,11 +2,9 @@ export const site = {
   name: "Future Founders",
   description:
     "Future Founders is a student-led entrepreneurship network connecting high school and college students through local chapters, workshops, competitions, projects, and leadership opportunities.",
-  // Set NEXT_PUBLIC_SITE_URL only after the organization's canonical domain is verified.
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://future-founders-network.utsavsresearch.chatgpt.site",
-  development: true,
+  // Canonical public origin supplied by the organization. No runtime secret required.
+  url: "https://futurefounderhq.org",
+  development: false,
   emails: { general: null, chapters: null, partnerships: null } as Record<
     string,
     string | null

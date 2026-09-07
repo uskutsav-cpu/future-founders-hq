@@ -47,3 +47,14 @@ No Lighthouse score or official partnership is claimed.
 - Mobile menu opens, Shift+Tab wraps to its last link, and Escape closes it and returns focus to Menu. Application acknowledgment works by keyboard and enables the exact supplied chapter application destination. No forms submitted or real browser data cleared.
 - Removed redundant chapter/application copy and obsolete competition directory code. Updated homepage competition preview and privacy/terms descriptions of the interest form. No dependencies added.
 - Owner-only Site access verified unchanged before publication. Public launch still needs the legal/contact decisions in LEGAL-READINESS.md and finalized competition rules. No Lighthouse score or full legal compliance claim is made.
+
+## Cloudflare production preparation — September 7, 2026
+
+- Preserved all visible pages, components, CSS, photos, fonts and animation. Only canonical origin/indexing configuration changed in product data.
+- Added current Wrangler 4.129.1 with Workers Static Assets, force-trailing-slash HTML routing and custom 404. No SSR adapter, SPA fallback, KV, database or paid service configured. No existing dependency version changed.
+- Clean npm ci completed; npm audit reported zero vulnerabilities. Node 24.16.0 tested and pinned. Wrangler requires Node >=22.
+- Lint, TypeScript, 14 tests and clean production build passed. Export validation: 38 HTML files, 2,057 local references. Production SEO checks: 35 indexable pages, canonical/OG/social URLs, sitemap, robots and Cloudflare asset-size limits passed.
+- Wrangler dry-run passed. Real local Cloudflare runtime: 350 HTTP checks passed across all 35 content routes, query-string refreshes, trailing-slash redirects, static RSC payloads, images, fonts, JS/CSS and missing-route 404.
+- Browser checks under Cloudflare runtime: desktop navigation, correct Poppins font, 375px calendar, mobile menu/Escape, application checkbox enabling the exact external link, Melissa profile/photo loading. No observed console warnings/errors or horizontal overflow. No forms submitted.
+- Scanned all reachable Git history blobs for common credential patterns: no findings across 343 history objects. Only .env.example tracked; no required application secrets. Git ignore checks cover environment files, Wrangler local state and private key formats. This pattern scan is not a claim of exhaustive secret detection.
+- Cloudflare authentication is unavailable in Wrangler and browser. No Cloudflare deployment, domain binding, nameserver change, integration authorization or paid plan action performed. Apex and www failed DNS resolution. DEPLOYMENT.md records exact remaining account/domain steps without invented account IDs, workers.dev URLs or assigned nameservers.

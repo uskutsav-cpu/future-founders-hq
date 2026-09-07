@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "future-founders-hq",
+  "compatibility_date": "2026-09-07",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./out",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+  // After futurefounderhq.org is ACTIVE in your Cloudflare account, add:
+  // "routes": [{ "pattern": "futurefounderhq.org", "custom_domain": true }]
+  // Intentionally omitted until then so workers.dev deployment needs no zone.
+  // Configure www -> apex using a Cloudflare Redirect Rule (DEPLOYMENT.md).
+}

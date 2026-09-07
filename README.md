@@ -5,7 +5,7 @@ Next.js App Router, React, TypeScript, Tailwind CSS. Server-rendered static page
 ## Develop and validate
 
 ```sh
-npm install
+npm ci
 npm run dev
 npm run lint
 npm run typecheck
@@ -15,7 +15,7 @@ node scripts/check-export.mjs
 npm start
 ```
 
-`npm run build` uses the supported Next.js webpack builder and exports to `out/`. Hosting is configured in `.openai/hosting.json`. All content changes require a fresh build.
+`npm run build` uses the supported Next.js webpack builder and exports to `out/`. Cloudflare Workers Static Assets is configured in `wrangler.jsonc`; the existing Sites preview is preserved in `.openai/hosting.json`. See [DEPLOYMENT.md](DEPLOYMENT.md) for deployment and domain setup. All content changes require a fresh build.
 
 ## Content editing
 
@@ -44,7 +44,7 @@ The hero is a CSS bright-blue field (#0292DF) with dark navy accents (#0A2C55) w
 
 ## Before wider publication
 
-The Site remains an owner-only preview. Confirm the remaining chapter information, image permissions, and any organization policies. Set `site.development` to false when ready for search indexing. This flag controls crawler metadata, not visible placeholder notices. Configure a canonical domain through `NEXT_PUBLIC_SITE_URL` if changed from the existing Site URL.
+The existing Sites publication remains an owner-only preview. The production build uses `https://futurefounderhq.org` as its canonical origin and allows search indexing. Confirm the remaining chapter information, image permissions, and any organization policies before public launch. See DEPLOYMENT.md for actual deployment status. No application environment variables are required.
 
 Verify new opportunity URLs, dates, eligibility, and organizers before adding listings. External opportunities must never imply an unconfirmed partnership. No funding, sponsorship, acceptance rate, or membership claims have been invented.
 

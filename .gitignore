@@ -43,3 +43,10 @@ next-env.d.ts
 # Public configuration template
 !.env.example
 /dist/
+
+# Cloudflare local state and credentials
+/.wrangler/
+.dev.vars*
+*.key
+*.p12
+*.pfx

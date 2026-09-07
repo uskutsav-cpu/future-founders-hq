@@ -1,0 +1,3 @@
+# Keep editing originals and attribution documentation in Git, not the CDN.
+/images/originals/**
+**/*.md

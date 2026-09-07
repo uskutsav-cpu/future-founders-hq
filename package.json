@@ -9,7 +9,12 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "prepare-images": "node scripts/prepare-images.mjs"
+    "prepare-images": "node scripts/prepare-images.mjs",
+    "preview:cloudflare": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "check:export": "node scripts/check-export.mjs",
+    "check:production": "node scripts/check-production.mjs",
+    "check:routes": "node scripts/check-routes.mjs"
   },
   "dependencies": {
     "next": "16.3.4",
@@ -25,7 +30,11 @@
     "eslint-config-next": "16.3.4",
     "sharp": "^0.35.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.129.1"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  }
 }
