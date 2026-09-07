@@ -1,3 +1,4 @@
+import { PersonCard } from "@/components/person-card";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
@@ -42,7 +43,11 @@ export default async function Page({
     <>
       <Breadcrumbs current={c.name} />
       <PageHero
-        eyebrow={`${c.type.toUpperCase()} / ${(c.city || c.country).toUpperCase()}`}
+        eyebrow={
+          c.pioneer
+            ? "THE PIONEER CHAPTER / HERITAGE HIGH SCHOOL"
+            : `${c.type.toUpperCase()} / ${(c.city || c.country).toUpperCase()}`
+        }
         title={c.name}
       >
         <p>
@@ -69,6 +74,9 @@ export default async function Page({
               <i className="status-dot" /> {c.status}
             </span>
             <span>{c.type}</span>
+            {c.pioneer && (
+              <span className="pioneer-label">Pioneer chapter</span>
+            )}
             {c.founded && <span>Founded {c.founded}</span>}
             {c.memberCount !== undefined && (
               <span>{c.memberCount} members</span>
@@ -101,23 +109,6 @@ export default async function Page({
             )}
             <TextLink href="/chapters">Back to all chapters</TextLink>
           </div>
-          {c.leadership && c.leadership.length > 0 && (
-            <section className="section">
-              <h2>Chapter leadership</h2>
-              {c.leadership.map((p) => (
-                <article key={p.name}>
-                  <h3>{p.name}</h3>
-                  <p>{p.role}</p>
-                </article>
-              ))}
-            </section>
-          )}
-          {c.president && !c.leadership?.length && (
-            <section className="section">
-              <h3>Chapter president</h3>
-              <p>{c.president}</p>
-            </section>
-          )}
           {c.achievements?.length && (
             <section className="section">
               <h2>What we’ve done</h2>
@@ -150,6 +141,24 @@ export default async function Page({
           )}
         </div>
         <aside>
+          {c.schoolWebsite && (
+            <div className="school-reference">
+              <p className="eyebrow">THE SCHOOL</p>
+              <h3>{c.school}</h3>
+              <p>
+                {c.district || [c.city, c.country].filter(Boolean).join(", ")}
+              </p>
+              <a
+                className="text-link"
+                href={c.schoolWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit school website <span aria-hidden="true">↗</span>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+          )}
           <p className="eyebrow">ON THE CALENDAR</p>
           {meetings.length ? (
             meetings.map((e) => (
@@ -177,6 +186,23 @@ export default async function Page({
           )}
         </aside>
       </section>
+      {!!c.leadership?.length && (
+        <section className="container section chapter-team">
+          <div className="section-heading">
+            <p className="section-number">THE PEOPLE BEHIND THE CHAPTER</p>
+            <h2>
+              {c.pioneer ? "Meet the Co-Presidents." : "Chapter leadership."}
+            </h2>
+          </div>
+          <div
+            className={`team-grid ${c.leadership.length === 1 ? "team-grid-single" : ""}`}
+          >
+            {c.leadership.map((person) => (
+              <PersonCard person={person} context={c.name} key={person.id} />
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }

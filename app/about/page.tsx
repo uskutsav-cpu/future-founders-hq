@@ -1,3 +1,4 @@
+import { FoundingTeam } from "@/components/founding-team";
 import { pageMetadata } from "@/lib/seo";
 import { PageHero, CTA, ImagePanel, Eyebrow, TextLink } from "@/components/ui";
 export const metadata = pageMetadata("About", "/about");
@@ -80,9 +81,7 @@ export default function Page() {
               helps local ideas travel further.
             </p>
             <div className="button-row">
-              <TextLink href="/leadership">
-                Meet the leadership structure
-              </TextLink>
+              <TextLink href="/leadership">Meet our chapter leaders</TextLink>
             </div>
           </div>
         </div>
@@ -103,6 +102,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+      <FoundingTeam />
       <CTA />
     </>
   );

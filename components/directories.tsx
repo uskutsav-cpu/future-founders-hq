@@ -57,7 +57,11 @@ export function ChapterDirectory() {
         <span>STATUS</span>
       </div>
       {found.map((c) => (
-        <Link href={"/chapters/" + c.slug} className="chapter-row" key={c.id}>
+        <Link
+          href={"/chapters/" + c.slug}
+          className={`chapter-row ${c.pioneer ? "chapter-row-pioneer" : ""}`}
+          key={c.id}
+        >
           <span className="chapter-name">
             <span className="chapter-initial" aria-hidden="true">
               {c.name
@@ -69,10 +73,12 @@ export function ChapterDirectory() {
             <span>
               <strong>{c.name}</strong>
               <small>
-                {c.district ||
-                  (c.school
-                    ? "Future Founders chapter"
-                    : "School details to come")}
+                {c.pioneer
+                  ? "Pioneer chapter · Frisco ISD"
+                  : c.district ||
+                    (c.school
+                      ? "Future Founders chapter"
+                      : "School details to come")}
               </small>
             </span>
           </span>

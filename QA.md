@@ -26,3 +26,13 @@ No Lighthouse score or official partnership is claimed.
 - Automatic approval review blocked clearing potentially real legacy data in the user's browser. Did not retry or bypass that control. Instead tested the production clear helper against disposable storage: removes only the legacy key, retains unrelated values, reports absent data correctly and propagates blocked-storage errors to the component's error handler.
 - No browser console warnings/errors observed during reviewed legal/application pages. No new motion, trackers, cookies, databases or paid services introduced.
 - Draft policy status and missing operator/contact/age/retention details remain explicit. Source-level unknowns are null, not fictitious live addresses. Legal review, name clearance, organization adoption and operational implementation remain outstanding; see LEGAL-READINESS.md.
+
+## Chapter leadership update — September 7, 2026
+
+- Added Heritage High School as the pioneer chapter, listed first in the directory/network. Its three Co-Presidents share records with the About and Leadership founding-team sections.
+- Added the four supplied chapter presidents, six LinkedIn links and six actual profile portraits. Display names and portraits were read from each exact supplied profile in the browser; no similar-name search image was substituted. Sriram Subra has initials and no invented LinkedIn link.
+- School websites are separately labeled, with accidental trailing commas removed. They are never used as chapter joining destinations.
+- Nepal replaced by Bangladesh, including the dynamic route, directory/network, current source documentation and legal chapter-count context. Seven supplied listings remain distinct from the previously supplied organization-wide total of 10.
+- Lint, TypeScript, 11 tests and production build passed. Export checker: 37 HTML pages, 2,004 local references, zero failures.
+- Inspected the About founding-team section on desktop. Checked the Heritage mobile profile, the four president profiles and Bangladesh at 375px: correct names, portrait paths and school links, no horizontal overflow. Directory search finds Heritage with its pioneer label. No browser console warnings or errors observed.
+- Portraits are local 600px WebP assets totaling approximately 234KB. No external image hotlinks or new dependencies.

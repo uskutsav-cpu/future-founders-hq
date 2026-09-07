@@ -20,10 +20,10 @@ npm start
 ## Content editing
 
 - `data/site.ts`: Google Forms application URL, Instagram, TikTok, photography, metadata and indexing configuration.
-- `data/chapters.ts`: six organization-supplied chapter listings. Nepal and Azerbaijan await school/city details. The organization-wide total of 10 comes from the original brief and is separate from the six supplied listings; add remaining records when available.
+- `data/chapters.ts`: seven organization-supplied chapter listings. Bangladesh and Azerbaijan await school/city details. The organization-wide total of 10 comes from the original brief and is separate from the seven supplied listings; add remaining records when available.
 - `data/competitions.ts`: empty typed opportunity collection. No fictional competitions remain. The competitions page renders its announcement state until verified listings are added, then automatically enables the directory.
 - `data/events.ts`: event records. Empty upcoming calendar is intentional.
-- `data/leadership.ts`: national team and advisors. Missing sections remain hidden.
+- `data/leadership.ts`: shared people records, founding team, national team and advisors. Chapter and About profiles share the same records. Add approved local portrait paths to `image`; initials appear until a portrait is supplied. Six supplied LinkedIn profiles have verified display names and locally optimized portraits; Sriram uses initials until his photo is supplied.
 - `data/resources.ts`, `data/programs.ts`, `data/faqs.ts`: resources, chapter activities, and frequently asked questions.
 
 Keep chapter slugs stable once published. Only add names, member counts, accomplishments, dates, and affiliations supplied or verified by the organization.

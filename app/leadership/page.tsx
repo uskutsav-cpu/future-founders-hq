@@ -1,13 +1,14 @@
 import { pageMetadata } from "@/lib/seo";
-import Image from "next/image";
-import { PageHero, EmptyState, TextLink, CTA } from "@/components/ui";
+import { PageHero, TextLink, CTA } from "@/components/ui";
+import { FoundingTeam } from "@/components/founding-team";
+import { PersonCard } from "@/components/person-card";
 import { leadership } from "@/data/leadership";
 import { chapters } from "@/data/chapters";
 export const metadata = pageMetadata("Leadership", "/leadership");
 export default function Page() {
-  const presidents = chapters.filter((c) => c.president);
-  const hasPeople =
-    Object.values(leadership).some((g) => g.length) || presidents.length;
+  const chapterTeams = chapters.filter(
+    (c) => c.leadership?.length && !c.pioneer,
+  );
   return (
     <>
       <PageHero
@@ -19,16 +20,8 @@ export default function Page() {
           and making room for the next generation of founders.
         </p>
       </PageHero>
+      <FoundingTeam />
       <div className="container">
-        {!hasPeople && (
-          <EmptyState title="Meet the team. Soon.">
-            <p>
-              Meet the students behind our chapters and national team.
-              Leadership profiles will be added here soon.
-            </p>
-            <TextLink href="/contact">Get in touch</TextLink>
-          </EmptyState>
-        )}
         {Object.entries(leadership)
           .filter(([, people]) => people.length)
           .map(([group, people]) => (
@@ -38,40 +31,35 @@ export default function Page() {
                   ? "National Executive Team"
                   : "Board & Advisors"}
               </h2>
-              <div className="leadership-grid">
-                {people.map((p) => (
-                  <article className="person-card" key={p.id}>
-                    {p.image && (
-                      <Image
-                        src={p.image}
-                        alt={p.name}
-                        width={600}
-                        height={750}
-                      />
-                    )}
-                    <h3>{p.name}</h3>
-                    <p>{p.role}</p>
-                    {p.bio && <p>{p.bio}</p>}
-                    {p.linkedin && <a href={p.linkedin}>LinkedIn ↗</a>}
-                  </article>
+              <div className="team-grid">
+                {people.map((person) => (
+                  <PersonCard key={person.id} person={person} />
                 ))}
               </div>
             </section>
           ))}
-        {presidents.length > 0 && (
-          <section className="section">
-            <h2>Chapter Presidents</h2>
-            <div className="leadership-grid">
-              {presidents.map((c) => (
-                <article className="person-card" key={c.id}>
-                  <h3>{c.president}</h3>
-                  <p>{c.name}</p>
-                  <TextLink href={"/chapters/" + c.slug}>View chapter</TextLink>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
+        <section className="section chapter-team">
+          <div className="section-heading">
+            <p className="section-number">LOCAL LEADERSHIP</p>
+            <h2>Chapter Presidents.</h2>
+          </div>
+          <div className="team-grid">
+            {chapterTeams.map((c) => (
+              <div key={c.id}>
+                {c.leadership!.map((person) => (
+                  <PersonCard
+                    key={person.id}
+                    person={person}
+                    context={c.name}
+                  />
+                ))}
+                <div className="team-chapter-link">
+                  <TextLink href={`/chapters/${c.slug}`}>View chapter</TextLink>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
       <CTA />
     </>

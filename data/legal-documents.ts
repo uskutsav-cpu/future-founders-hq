@@ -596,7 +596,7 @@ export const legalDocuments: LegalDocument[] = [
       {
         title: "Accuracy and endorsements",
         paragraphs: [
-          "Publish only supported chapter counts, membership statistics, awards, outcomes, testimonials and partner claims. Keep the source, date, permission and qualification with each claim. Disclose relevant material relationships behind endorsements. The current total of 10 active chapters came from the organization’s brief; six chapter listings have been supplied. The organization should document the total before public claims are finalized.",
+          "Publish only supported chapter counts, membership statistics, awards, outcomes, testimonials and partner claims. Keep the source, date, permission and qualification with each claim. Disclose relevant material relationships behind endorsements. The current total of 10 active chapters came from the organization’s brief; seven chapter listings have been supplied. The organization should document the total before public claims are finalized.",
         ],
       },
       {

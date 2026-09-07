@@ -4029,3 +4029,187 @@ h3 {
     padding-bottom: 0;
   }
 }
+
+/* Student leadership — shared portraits and a restrained pioneer treatment. */
+.founding-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+.founding-heading h2 {
+  font-size: clamp(34px, 4.5vw, 62px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.founding-heading > div > p:not(.eyebrow) {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+  max-width: 480px;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 30px;
+}
+.team-person {
+  min-width: 0;
+}
+.team-portrait {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #eaf1f7;
+}
+.team-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.team-initials {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  background: #eaf1f7;
+  color: #163a62;
+  border-top: 4px solid #0492df;
+}
+.team-initials > span {
+  font-size: clamp(48px, 6.5vw, 96px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.team-initials small {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+.team-person-info {
+  padding-top: 25px;
+}
+.team-role {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4b6780;
+  margin-bottom: 10px;
+}
+.team-person h3 {
+  font-size: clamp(23px, 2.3vw, 30px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.team-context {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 14px 0;
+  color: #4b6072;
+}
+.team-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 26px;
+  margin-top: 6px;
+  border-bottom: 1px solid #a8bac9;
+  font-size: 13px;
+  font-weight: 500;
+}
+.team-link:hover {
+  border-color: #0a2c55;
+}
+.team-chapter-link {
+  margin-top: 20px;
+  font-size: 13px;
+}
+.team-grid-single {
+  grid-template-columns: minmax(0, 400px);
+}
+.chapter-team {
+  border-top: 1px solid #d4dfe8;
+}
+.school-reference {
+  border-top: 3px solid #0492df;
+  padding: 28px 0 35px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #d4dfe8;
+}
+.school-reference h3 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 18px 0 12px;
+}
+.school-reference p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.school-reference .text-link {
+  font-size: 13px;
+}
+.chapter-row-pioneer .chapter-initial {
+  background: #0a2c55;
+  color: white;
+}
+.chapter-row-pioneer .chapter-name small {
+  color: #155f8b;
+  font-weight: 500;
+}
+.pioneer-label {
+  color: #07567f;
+  font-weight: 500;
+}
+.network-pioneer {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+  color: #506a7e;
+}
+@media (max-width: 900px) {
+  .founding-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .team-grid-single {
+    grid-template-columns: minmax(0, 400px);
+  }
+}
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .team-initials > span {
+    font-size: 74px;
+  }
+  .team-portrait {
+    aspect-ratio: 1;
+  }
+  .founding-heading {
+    margin-bottom: 30px;
+  }
+  .founding-heading > div > p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  .team-person h3 {
+    font-size: 27px;
+  }
+}

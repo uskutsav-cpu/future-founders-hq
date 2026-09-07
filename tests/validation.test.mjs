@@ -16,9 +16,9 @@ test("application and social links exactly match organization-supplied destinati
 });
 test("all fictional competitions have been removed", () =>
   assert.equal(competitions.length, 0));
-test("six supplied chapter records retain unique routes without invented people or counts", () => {
-  assert.equal(chapters.length, 6);
-  assert.equal(new Set(chapters.map((c) => c.slug)).size, 6);
+test("seven supplied chapter records retain unique routes without invented member counts", () => {
+  assert.equal(chapters.length, 7);
+  assert.equal(new Set(chapters.map((c) => c.slug)).size, 7);
   assert.ok(
     chapters.every(
       (c) => !c.sample && !c.president && c.memberCount === undefined,
@@ -27,7 +27,7 @@ test("six supplied chapter records retain unique routes without invented people 
   assert.equal(activeChapterCount, 10);
 });
 test("country-only chapters do not invent schools or cities", () => {
-  for (const country of ["Nepal", "Azerbaijan"]) {
+  for (const country of ["Bangladesh", "Azerbaijan"]) {
     const c = chapters.find((c) => c.country === country);
     assert.ok(c);
     assert.equal(c.school, undefined);
@@ -99,4 +99,34 @@ test("blocked browser storage does not report successful deletion", () => {
     },
   };
   assert.throws(() => clearLegacyDraft(storage), /Storage denied/);
+});
+
+test("Heritage is the pioneer chapter and shares the three founding Co-Presidents", () => {
+  const heritage = chapters.find((c) => c.slug === "heritage-high-school");
+  assert.equal(chapters.filter((c) => c.pioneer).length, 1);
+  assert.equal(heritage.pioneer, true);
+  assert.deepEqual(
+    heritage.leadership.map((p) => p.name),
+    ["Utsav Sunil Kumar", "Akshay Datta Kolluru", "Sriram Subra"],
+  );
+  assert.ok(heritage.leadership.every((p) => p.role === "Co-President"));
+  assert.equal(
+    heritage.leadership.find((p) => p.name === "Sriram Subra").linkedin,
+    undefined,
+  );
+});
+test("school websites are separate from chapter joining destinations and have no pasted commas", () => {
+  const expected = new Map([
+    ["heritage-high-school", "https://www.friscoisd.org/o/hhs"],
+    ["rock-hill-high-school", "https://www.prosper-isd.net/o/rhhs"],
+    ["amity-school-dubai", "https://amityschooldubai.com/"],
+    ["emerson-high-school", "https://www.friscoisd.org/o/ehs"],
+    ["coppell-high-school", "https://www.coppellisd.com/o/chs"],
+  ]);
+  for (const [slug, url] of expected) {
+    const chapter = chapters.find((c) => c.slug === slug);
+    assert.equal(chapter.schoolWebsite, url);
+    assert.notEqual(chapter.website, url);
+  }
+  assert.ok(!chapters.some((c) => c.country === "Nepal" || c.slug === "nepal"));
 });
