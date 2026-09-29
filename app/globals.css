@@ -900,7 +900,7 @@ p + p {
   grid-template-columns: 2.5fr 1.2fr 1fr 0.7fr 25px;
   align-items: center;
   gap: 0;
-  padding: 24px 22px;
+  padding: 15px 22px;
   border-bottom: 1px solid var(--line);
   transition: background 0.15s;
   font-size: 0.88rem;
@@ -911,20 +911,48 @@ p + p {
 .chapter-name {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   min-width: 0;
 }
-.chapter-initial {
-  width: 42px;
-  height: 44px;
-  background: #e7eef6;
-  border: 1px solid #d3dfeb;
-  color: #3e5873;
-  font-size: 0.9rem;
+.chapter-logo-frame {
+  width: 66px;
+  height: 66px;
+  flex: 0 0 66px;
   display: grid;
   place-items: center;
-  font-weight: 600;
-  flex-shrink: 0;
+  overflow: hidden;
+  padding: 6px;
+  border: 1px solid #e4e0d7;
+  border-radius: 12px;
+  background: #fffefa;
+  box-shadow: 0 3px 12px rgb(20 35 48 / 5%);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.chapter-logo-frame-wide {
+  width: 98px;
+  flex-basis: 98px;
+}
+.chapter-row:hover .chapter-logo-frame {
+  border-color: #c7d4db;
+  transform: translateY(-1px);
+}
+.chapter-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.chapter-logo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f4f1e9, #e8eef1);
+  color: #173451;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 .chapter-name strong {
   font-size: 1rem;
@@ -1557,6 +1585,60 @@ p + p {
 .resource-row > span {
   color: var(--muted);
 }
+.resource-note {
+  max-width: 700px;
+  margin: -12px 0 26px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.resource-row-pdf {
+  gap: 24px;
+  padding: 22px 24px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e0d5;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #fffefa, #f8f6f0);
+  box-shadow: 0 5px 18px rgb(23 40 54 / 4%);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.resource-row-pdf:hover {
+  border-color: #c7d4db;
+  box-shadow: 0 8px 24px rgb(23 40 54 / 7%);
+  transform: translateY(-1px);
+}
+.resource-title-block {
+  display: grid;
+  gap: 8px;
+}
+.resource-format {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c7780;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+.resource-format i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #b99a56;
+}
+.resource-row-pdf > a {
+  padding: 12px 14px;
+  border: 1px solid #102f50;
+  border-radius: 6px;
+  background: #102f50;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.resource-row-pdf > a:hover {
+  background: transparent;
+  color: #102f50;
+}
 .leadership-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1619,9 +1701,6 @@ p + p {
   .chapter-row {
     padding: 20px 12px;
   }
-  .chapter-initial {
-    display: none;
-  }
   .faq-section {
     gap: 45px;
   }
@@ -1677,6 +1756,9 @@ p + p {
     gap: 20px;
     grid-template-columns: 1.5fr 2fr 100px;
   }
+  .resource-row-pdf {
+    padding: 18px;
+  }
 }
 @media (max-width: 767px) {
   .directory-intro > strong {
@@ -1720,6 +1802,20 @@ p + p {
     gap: 12px;
     padding: 23px 0;
     position: relative;
+  }
+  .chapter-logo-frame {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .chapter-logo-frame-wide {
+    width: 82px;
+    flex-basis: 82px;
+  }
+  .chapter-name {
+    gap: 12px;
   }
   .chapter-name {
     grid-column: 1;
@@ -1985,6 +2081,11 @@ p + p {
   .resource-row {
     grid-template-columns: 1fr 90px;
     gap: 12px;
+  }
+  .resource-row-pdf {
+    grid-template-columns: 1fr 90px;
+    gap: 12px;
+    padding: 16px 12px;
   }
   .resource-row h3 {
     font-size: 1.08rem;
@@ -4159,9 +4260,8 @@ h3 {
 .school-reference .text-link {
   font-size: 13px;
 }
-.chapter-row-pioneer .chapter-initial {
-  background: #0a2c55;
-  color: white;
+.chapter-row-pioneer .chapter-logo-frame {
+  border-color: #c6d8df;
 }
 .chapter-row-pioneer .chapter-name small {
   color: #155f8b;

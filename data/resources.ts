@@ -1,12 +1,67 @@
 export type Resource = {
   title: string;
   description: string;
-  category: "Chapter Leaders" | "Members" | "Brand";
+  category:
+    | "Chapter Leaders"
+    | "Members"
+    | "Brand"
+    | "Workshops & Competitions";
   href?: string;
   status: "Available" | "Coming Soon";
   format?: string;
+  pages?: number;
 };
 export const resources: Resource[] = [
+  {
+    title: "Blue Ocean competition guide",
+    description:
+      "Pitch requirements, recommended tools, a presentation template, and submission links. Confirm current dates and rules with Blue Ocean before applying.",
+    category: "Workshops & Competitions",
+    href: "/resources/blue-ocean-competition-guide.pdf",
+    status: "Available",
+    format: "PDF",
+    pages: 10,
+  },
+  {
+    title: "General competitions overview",
+    description:
+      "A starting point for entrepreneurship, finance, technology, social impact, and medical competitions. Check each organizer for current details.",
+    category: "Workshops & Competitions",
+    href: "/resources/general-competitions-guide.pdf",
+    status: "Available",
+    format: "PDF",
+    pages: 11,
+  },
+  {
+    title: "Finding a problem worth solving",
+    description:
+      "Workshop slides on finding a specific problem, gathering evidence, and learning from interviews and existing workarounds.",
+    category: "Workshops & Competitions",
+    href: "/resources/problem-finding-workshop.pdf",
+    status: "Available",
+    format: "PDF",
+    pages: 7,
+  },
+  {
+    title: "MVP planning notes",
+    description:
+      "A short guide to testing assumptions, choosing core features, and writing a clear value proposition.",
+    category: "Workshops & Competitions",
+    href: "/resources/mvp-planning-notes.pdf",
+    status: "Available",
+    format: "PDF",
+    pages: 8,
+  },
+  {
+    title: "Marketing workshop notes",
+    description:
+      "Notes on customer discovery, connecting with customers, and shaping a useful offer.",
+    category: "Workshops & Competitions",
+    href: "/resources/future-founders-marketing-notes.pdf",
+    status: "Available",
+    format: "PDF",
+    pages: 7,
+  },
   {
     title: "Chapter launch checklist",
     description: "From a founding team to your first meeting.",

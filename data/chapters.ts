@@ -18,6 +18,9 @@ export type Chapter = {
   image?: string;
   website?: string;
   schoolWebsite?: string;
+  logo?: string;
+  logoShape?: "wide";
+  mark?: string;
   pioneer?: boolean;
   instagram?: string;
   email?: string;
@@ -48,12 +51,14 @@ export const chapters: Chapter[] = [
     status: "Active",
     sample: false,
     pioneer: true,
+    logo: "/images/chapters/heritage-high-school.png",
     schoolWebsite: "https://www.friscoisd.org/o/hhs",
     leadership: foundingTeam,
   },
   {
     id: "rock-hill",
     schoolWebsite: "https://www.prosper-isd.net/o/rhhs",
+    logo: "/images/chapters/rock-hill-high-school.png",
     leadership: [people.himangi],
     slug: "rock-hill-high-school",
     name: "Rock Hill High School",
@@ -70,6 +75,8 @@ export const chapters: Chapter[] = [
   {
     id: "amity-dubai",
     schoolWebsite: "https://amityschooldubai.com/",
+    logo: "/images/chapters/amity-school-dubai.svg",
+    logoShape: "wide",
     leadership: [people.maryam],
     slug: "amity-school-dubai",
     name: "Amity School Dubai",
@@ -84,6 +91,8 @@ export const chapters: Chapter[] = [
   {
     id: "emerson",
     schoolWebsite: "https://www.friscoisd.org/o/ehs",
+    logo: "/images/chapters/emerson-high-school.png",
+    logoShape: "wide",
     leadership: [people.dhaanya],
     slug: "emerson-high-school",
     name: "Emerson High School",
@@ -100,6 +109,7 @@ export const chapters: Chapter[] = [
   {
     id: "coppell",
     schoolWebsite: "https://www.coppellisd.com/o/chs",
+    logo: "/images/chapters/coppell-high-school.png",
     leadership: [people.coppell],
     slug: "coppell-high-school",
     name: "Coppell High School",
@@ -126,6 +136,8 @@ export const chapters: Chapter[] = [
     status: "Active",
     sample: false,
     schoolWebsite: "https://www.melissaisd.org/o/mhs",
+    logo: "/images/chapters/melissa-high-school.png",
+    logoShape: "wide",
     leadership: [people.ahmed],
   },
   {
@@ -137,6 +149,7 @@ export const chapters: Chapter[] = [
     type: "High School",
     status: "Active",
     sample: false,
+    mark: "BC",
   },
   {
     id: "azerbaijan",
@@ -147,6 +160,7 @@ export const chapters: Chapter[] = [
     type: "High School",
     status: "Active",
     sample: false,
+    mark: "AC",
   },
   {
     id: "walnut-grove",
@@ -162,6 +176,7 @@ export const chapters: Chapter[] = [
     status: "Active",
     sample: false,
     schoolWebsite: "https://www.prosper-isd.net/o/wghs/",
+    logo: "/images/chapters/walnut-grove-high-school.png",
     email: "saisha.badia@gmail.com",
   },
   {
@@ -175,6 +190,7 @@ export const chapters: Chapter[] = [
     type: "College",
     status: "Active",
     sample: false,
+    mark: "USM",
     email: "adisuarno29@gmail.com",
   },
 ].map((c) => ({

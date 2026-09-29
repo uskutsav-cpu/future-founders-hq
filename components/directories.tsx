@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { chapters } from "@/data/chapters";
 export function ChapterDirectory() {
@@ -61,12 +62,29 @@ export function ChapterDirectory() {
           key={c.id}
         >
           <span className="chapter-name">
-            <span className="chapter-initial" aria-hidden="true">
-              {c.name
-                .split(" ")
-                .slice(0, 2)
-                .map((x) => x[0])
-                .join("")}
+            <span
+              className={`chapter-logo-frame${c.logoShape ? ` chapter-logo-frame-${c.logoShape}` : ""}`}
+              aria-hidden="true"
+            >
+              {c.logo ? (
+                <Image
+                  src={c.logo}
+                  alt=""
+                  width={72}
+                  height={72}
+                  className="chapter-logo-image"
+                  unoptimized
+                />
+              ) : (
+                <span className="chapter-logo-placeholder">
+                  {c.mark ||
+                    c.name
+                      .split(" ")
+                      .slice(0, 2)
+                      .map((x) => x[0])
+                      .join("")}
+                </span>
+              )}
             </span>
             <span>
               <strong>{c.name}</strong>
