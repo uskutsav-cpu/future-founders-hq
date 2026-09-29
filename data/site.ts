@@ -15,10 +15,34 @@ export const site = {
     TikTok: "https://www.tiktok.com/@futuref254?lang=en",
   },
 };
-export const sponsors: { name: string; detail?: string }[] = [
-  { name: "Unstop" },
-  { name: "Frisco Rough Riders", detail: "Minor League Baseball" },
-  { name: "XYZ Next Generation" },
+export const sponsors = [
+  {
+    name: "Unstop",
+    detail: "",
+    href: "https://unstop.com/",
+    logo: "/images/sponsors/unstop.svg",
+    width: 2000,
+    height: 796,
+    mark: "unstop",
+  },
+  {
+    name: "Frisco RoughRiders",
+    detail: "Minor League Baseball",
+    href: "https://www.mlb.com/milb/frisco",
+    logo: "/images/sponsors/frisco-roughriders.svg",
+    width: 79,
+    height: 72,
+    mark: "roughriders",
+  },
+  {
+    name: "XYZ Next Generation",
+    detail: "",
+    href: "https://gen.xyz/",
+    logo: "/images/sponsors/xyz.svg",
+    width: 85,
+    height: 50,
+    mark: "xyz",
+  },
 ];
 export const navigation = [
   ["About", "/about"],

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ApplicationNotice } from "@/components/application-opportunity";
 import { competitions, formatDate } from "@/data/competitions";
 import { pageMetadata } from "@/lib/seo";
@@ -53,16 +54,43 @@ export default function Home() {
       </section>
       <section className="sponsors-band" aria-labelledby="sponsors-title">
         <div className="container sponsors-inner">
-          <p className="sponsors-label" id="sponsors-title">
-            With support from
-          </p>
+          <div className="sponsors-heading">
+            <div>
+              <p className="sponsors-label">SPONSORS &amp; PARTNERS</p>
+              <h2 id="sponsors-title">Our partners<span>.</span></h2>
+            </div>
+            <p className="sponsors-intro">With support from</p>
+          </div>
           <ul className="sponsors-list">
             {sponsors.map((sponsor) => (
-              <li className="sponsor-item" key={sponsor.name}>
-                <span className="sponsor-name">{sponsor.name}</span>
-                {sponsor.detail && (
-                  <span className="sponsor-detail">{sponsor.detail}</span>
-                )}
+              <li key={sponsor.name}>
+                <a
+                  className={`sponsor-card sponsor-card--${sponsor.mark}`}
+                  href={sponsor.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="sponsor-logo-stage">
+                    <Image
+                      src={sponsor.logo}
+                      alt=""
+                      width={sponsor.width}
+                      height={sponsor.height}
+                      unoptimized
+                      className="sponsor-logo"
+                    />
+                  </div>
+                  <div className="sponsor-caption">
+                    <div>
+                      <span className="sponsor-name">{sponsor.name}</span>
+                      {sponsor.detail && (
+                        <span className="sponsor-detail">{sponsor.detail}</span>
+                      )}
+                    </div>
+                    <span className="sponsor-arrow" aria-hidden="true">↗</span>
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </div>
+                </a>
               </li>
             ))}
           </ul>
