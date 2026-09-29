@@ -148,12 +148,40 @@ export const chapters: Chapter[] = [
     status: "Active",
     sample: false,
   },
+  {
+    id: "walnut-grove",
+    slug: "walnut-grove-high-school",
+    name: "Walnut Grove High School",
+    school: "Walnut Grove High School",
+    district: "Prosper ISD",
+    city: "Prosper",
+    state: "Texas",
+    country: "United States",
+    region: "North America",
+    type: "High School",
+    status: "Active",
+    sample: false,
+    schoolWebsite: "https://www.prosper-isd.net/o/wghs/",
+    email: "saisha.badia@gmail.com",
+  },
+  {
+    id: "university-of-semarang",
+    slug: "university-of-semarang",
+    name: "University of Semarang",
+    school: "University of Semarang",
+    city: "Semarang",
+    country: "Indonesia",
+    region: "Southeast Asia",
+    type: "College",
+    status: "Active",
+    sample: false,
+    email: "adisuarno29@gmail.com",
+  },
 ].map((c) => ({
   ...c,
   description: c.pioneer
     ? "The pioneer chapter of Future Founders. Led by the founding team at Heritage High School, this is where our student-led network began. A local home for students to test ideas, build projects, and learn together."
     : "A student-led community for testing ideas, building projects, and learning together. Bring your curiosity, find collaborators, and start making something real.",
 })) as Chapter[];
-// Organization-wide total supplied in the original brief. Eight chapter listings have been provided;
-// the remaining two are intentionally not represented by invented school records.
+// Organization-wide active chapter total.
 export const activeChapterCount = 10;
