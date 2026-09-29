@@ -9,7 +9,7 @@ import {
   ResponsivePhoto,
 } from "@/components/ui";
 import Link from "next/link";
-import { site } from "@/data/site";
+import { site, sponsors } from "@/data/site";
 import { activeChapterCount } from "@/data/chapters";
 import { Network } from "@/components/network";
 import { FAQAccordion } from "@/components/faq";
@@ -21,22 +21,51 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <section className="blue-hero">
-        <div className="blue-hero-watermark" aria-hidden="true" />
-        <div className="container blue-hero-inner">
-          <Eyebrow>THE STUDENT ENTREPRENEURSHIP NETWORK</Eyebrow>
-          <h1>
-            BUILD WHAT’S <span>NEXT.</span>
-          </h1>
-          <p>Find ambitious people. Build something together.</p>
-          <div className="button-row">
-            <Button href="/start-a-chapter">Start a Chapter</Button>
-            <TextLink href="/chapters">Find Your Chapter</TextLink>
+      <section className="home-hero">
+        <div className="container home-hero-inner">
+          <div className="home-hero-copy">
+            <Eyebrow>THE STUDENT ENTREPRENEURSHIP NETWORK</Eyebrow>
+            <h1>
+              Build what’s <span>next.</span>
+            </h1>
+            <p>Find ambitious people. Build something together.</p>
+            <div className="button-row">
+              <Button href="/start-a-chapter">Start a Chapter</Button>
+              <TextLink href="/chapters">Find Your Chapter</TextLink>
+            </div>
+            <div className="home-hero-note">
+              <span>IDEAS ARE JUST THE BEGINNING.</span>
+              <span>HIGH SCHOOL + COLLEGE</span>
+            </div>
           </div>
-          <div className="blue-hero-footnote">
-            <span>IDEAS ARE JUST THE BEGINNING.</span>
-            <span>HIGH SCHOOL + COLLEGE</span>
-          </div>
+          <figure className="home-hero-photo">
+            <ResponsivePhoto
+              kind="hero"
+              priority
+              sizes="(max-width: 767px) 100vw, (max-width: 1100px) 90vw, 52vw"
+            />
+            <figcaption>
+              <span>Inside a chapter</span>
+              <span>Students turning ideas into action</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section className="sponsors-band" aria-labelledby="sponsors-title">
+        <div className="container sponsors-inner">
+          <p className="sponsors-label" id="sponsors-title">
+            With support from
+          </p>
+          <ul className="sponsors-list">
+            {sponsors.map((sponsor) => (
+              <li className="sponsor-item" key={sponsor.name}>
+                <span className="sponsor-name">{sponsor.name}</span>
+                {sponsor.detail && (
+                  <span className="sponsor-detail">{sponsor.detail}</span>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       <ApplicationNotice />
