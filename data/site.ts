@@ -15,6 +15,11 @@ export const site = {
     TikTok: "https://www.tiktok.com/@futuref254?lang=en",
   },
 };
+export const sponsors: { name: string; detail?: string }[] = [
+  { name: "Unstop" },
+  { name: "Frisco Rough Riders", detail: "Minor League Baseball" },
+  { name: "XYZ Next Generation" },
+];
 export const navigation = [
   ["About", "/about"],
   ["What We Do", "/what-we-do"],
