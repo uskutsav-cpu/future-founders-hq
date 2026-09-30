@@ -1,9 +1,9 @@
 export const site = {
   name: "Future Founders",
   description:
-    "Future Founders is a student-led entrepreneurship network connecting high school and college students through local chapters, workshops, competitions, projects, and leadership opportunities.",
+    "Future Founders is a student-led entrepreneurship network for high school and college students. Find a local chapter, develop entrepreneurial skills through real projects, and explore student competitions and leadership opportunities.",
   // Canonical public origin supplied by the organization. No runtime secret required.
-  url: "https://futurefounderhq.org",
+  url: "https://futurefoundershq.org",
   development: false,
   emails: { general: null, chapters: null, partnerships: null } as Record<
     string,

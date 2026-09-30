@@ -52,10 +52,23 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "Organization",
-                name: site.name,
-                url: site.url,
-                description: site.description,
+                "@graph": [
+                  {
+                    "@type": "Organization",
+                    "@id": `${site.url}/#organization`,
+                    name: site.name,
+                    url: site.url,
+                    description: site.description,
+                    sameAs: [site.socials.Instagram, site.socials.TikTok],
+                  },
+                  {
+                    "@type": "WebSite",
+                    "@id": `${site.url}/#website`,
+                    name: site.name,
+                    url: site.url,
+                    publisher: { "@id": `${site.url}/#organization` },
+                  },
+                ],
               }).replace(/</g, "\\u003c"),
             }}
           />
