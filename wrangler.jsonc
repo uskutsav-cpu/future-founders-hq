@@ -9,8 +9,8 @@
     "html_handling": "force-trailing-slash",
     "not_found_handling": "404-page",
   },
-  // After futurefounderhq.org is ACTIVE in your Cloudflare account, add:
-  // "routes": [{ "pattern": "futurefounderhq.org", "custom_domain": true }]
-  // Intentionally omitted until then so workers.dev deployment needs no zone.
+  // The custom domain is currently attached in the Cloudflare dashboard.
+  // Add a routes entry only if recreating that binding after confirming zone state:
+  // "routes": [{ "pattern": "futurefoundershq.org", "custom_domain": true }]
   // Configure www -> apex using a Cloudflare Redirect Rule (DEPLOYMENT.md).
 }

@@ -4,7 +4,11 @@ import { PageHero, CTA } from "@/components/ui";
 import { ChapterDirectory } from "@/components/directories";
 import { Network } from "@/components/network";
 import { activeChapterCount } from "@/data/chapters";
-export const metadata = pageMetadata("Find your chapter", "/chapters");
+export const metadata = pageMetadata(
+  "High School & College Chapters",
+  "/chapters",
+  "Find a Future Founders student entrepreneurship chapter at a high school or college. Search the chapter directory by school, city, or state, or bring a chapter to your campus.",
+);
 export default function Page() {
   return (
     <>

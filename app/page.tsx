@@ -6,18 +6,23 @@ import {
   Button,
   TextLink,
   Eyebrow,
-  CTA,
   ResponsivePhoto,
 } from "@/components/ui";
 import Link from "next/link";
-import { site, sponsors } from "@/data/site";
+import { sponsors } from "@/data/site";
 import { activeChapterCount } from "@/data/chapters";
 import { Network } from "@/components/network";
 import { FAQAccordion } from "@/components/faq";
 import { pillars, programs, chapterSteps } from "@/data/programs";
 export const metadata = {
-  ...pageMetadata("Student Entrepreneurship Network", ""),
-  title: { absolute: "Future Founders | Student Entrepreneurship Network" },
+  ...pageMetadata(
+    "Student Entrepreneurship Network",
+    "",
+    "Future Founders brings high school and college students together to build projects, grow entrepreneurial skills, and find a local student-led chapter.",
+  ),
+  title: {
+    absolute: "Future Founders | Student Entrepreneurship Network",
+  },
 };
 export default function Home() {
   return (
@@ -34,6 +39,17 @@ export default function Home() {
               <Button href="/start-a-chapter">Start a Chapter</Button>
               <TextLink href="/chapters">Find Your Chapter</TextLink>
             </div>
+            {competitions[0] && (
+              <Link className="home-competition-link" href="/competitions">
+                <span className="home-competition-link-label">
+                  Student Case Study Competition
+                </span>
+                <span className="home-competition-link-details">
+                  Share your interest by {formatDate(competitions[0].deadline)}
+                  · Event date to be announced
+                </span>
+              </Link>
+            )}
             <div className="home-hero-note">
               <span>IDEAS ARE JUST THE BEGINNING.</span>
               <span>HIGH SCHOOL + COLLEGE</span>
@@ -280,48 +296,6 @@ export default function Home() {
           <TextLink href="/what-we-do">See what chapters do</TextLink>
         </div>
       </section>
-      <section className="container section opportunity-announcement">
-        <div>
-          <Eyebrow>COMPETITIONS & OPPORTUNITIES</Eyebrow>
-          <h2>
-            Case Study
-            <br />
-            Competition.
-          </h2>
-        </div>
-        <div>
-          <p>
-            Sign up by {formatDate(competitions[0]?.deadline)}. Competition
-            date: to be announced.
-          </p>
-          <TextLink href="/competitions">View competition & sign up</TextLink>
-        </div>
-      </section>
-      <section className="social-band">
-        <div className="container">
-          <div>
-            <Eyebrow>FOLLOW THE PEOPLE BUILDING WHAT’S NEXT</Eyebrow>
-            <h2>Stay in the loop.</h2>
-          </div>
-          <div>
-            <a
-              href={site.socials.Instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href={site.socials.TikTok}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TikTok <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
-      <CTA />
       <FAQAccordion />
     </>
   );

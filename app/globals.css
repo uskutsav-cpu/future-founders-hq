@@ -4557,10 +4557,40 @@ h3 {
   color: #546c80;
 }
 .competition-listing > .competition-note {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.75;
   margin-top: 22px;
   color: #4c6375;
+}
+.competition-prizes {
+  margin: 0 0 22px;
+  padding: 17px 19px;
+  border-left: 3px solid #b3935d;
+  background: #f6f4ef;
+}
+.competition-prizes > p {
+  margin-bottom: 10px;
+  color: #243b4f;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.competition-prizes ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.competition-prizes li {
+  padding: 7px 10px;
+  border: 1px solid #d7d1c5;
+  background: #fff;
+  color: #273e51;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 .competition-list-view {
   display: block;
@@ -4597,6 +4627,11 @@ h3 {
 .competition-footer-note a {
   font-size: 13px;
   flex-shrink: 0;
+}
+.competition-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
 }
 @media (max-width: 1050px) {
   .competition-calendar-layout {
@@ -5036,6 +5071,37 @@ body {
 .home-hero .text-link {
   color: #f4f0e7;
 }
+.home-competition-link {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 8px 15px;
+  align-items: baseline;
+  margin-top: 23px;
+  padding-top: 13px;
+  border-top: 1px solid rgb(244 240 231 / 28%);
+  color: #f4f0e7;
+  text-decoration: none;
+}
+.home-competition-link-label {
+  color: #d9c59f;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.home-competition-link-details {
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.home-competition-link:hover .home-competition-link-details {
+  color: #dfc694;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.home-competition-link:focus-visible {
+  outline: 2px solid #d5b57c;
+  outline-offset: 4px;
+}
 .home-hero :focus-visible {
   outline-color: #d5b57c;
 }
@@ -5257,6 +5323,11 @@ body {
     gap: 22px;
     flex-direction: column;
     margin-top: 25px;
+  }
+  .home-competition-link {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-top: 18px;
   }
   .home-hero-note {
     justify-content: space-between;

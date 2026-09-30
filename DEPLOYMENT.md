@@ -1,6 +1,6 @@
 # Future Founders — Cloudflare production deployment
 
-Canonical domain: **https://futurefounderhq.org** (singular founder).
+Canonical domain: **https://futurefoundershq.org**.
 
 ## Architecture and commands
 
@@ -22,9 +22,7 @@ GitHub repository: https://github.com/uskutsav-cpu/future-founders-hq (private).
 
 ## Current status
 
-Cloudflare Wrangler and the available Cloudflare browser are not authenticated. No Cloudflare account, zone ID, assigned nameservers or workers.dev account subdomain has been observed. No Cloudflare Worker deployment, Git integration, DNS change or paid service has been created. The existing owner-private Sites publication is preserved.
-
-On September 7, 2026, both production hostnames failed DNS resolution from this environment. The custom domain is not verified live, and the www redirect is not active/verified.
+The official site is deployed at `https://futurefoundershq.org/` and the Worker preview is `https://future-founders-hq.uskutsav.workers.dev/`. The domain serves the production Worker. The source repository keeps canonical metadata pointed at the official domain.
 
 ## One-time authorization and automatic deployments
 
@@ -37,31 +35,31 @@ For direct deployment from this checkout instead, run `npx wrangler login` and a
 
 ## Domain activation and Porkbun
 
-1. In Cloudflare, add **futurefounderhq.org** on the **Free** plan (or open its existing zone). Review/import existing DNS records, including any mail records; preserve unrelated functionality.
+1. In Cloudflare, add **futurefoundershq.org** on the **Free** plan (or open its existing zone). Review/import existing DNS records, including any mail records; preserve unrelated functionality.
 2. Cloudflare will display the authoritative nameservers assigned to this exact zone. Copy **only those displayed values**. No assigned nameservers are known yet, so none are listed here.
-3. In Porkbun **Domain Management → futurefounderhq.org → Details → Nameservers → Edit**, replace the registrar's current nameserver list with the exact Cloudflare-assigned list and save. This is a nameserver setting, not a made-up A record or Workers IP. No registrar transfer or hosting purchase is needed. The owner completes Porkbun sign-in; no Porkbun password is requested or used by this project.
+3. In Porkbun **Domain Management → futurefoundershq.org → Details → Nameservers → Edit**, replace the registrar's current nameserver list with the exact Cloudflare-assigned list and save. This is a nameserver setting, not a made-up A record or Workers IP. No registrar transfer or hosting purchase is needed. The owner completes Porkbun sign-in; no Porkbun password is requested or used by this project.
 4. Wait for Cloudflare's zone status to become **Active** and confirm existing DNS services still work. If an existing DNSSEC delegation is present, follow Cloudflare's onboarding instructions for that actual delegation; do not invent or blindly replace DS records.
-5. Verify the workers.dev deployment before attaching the production domain. In Worker **Settings → Domains & Routes → Add → Custom Domain**, enter **futurefounderhq.org**. Cloudflare provisions the appropriate DNS and certificate. Review any existing conflicting hostname record before changing it.
-6. Once the zone is active, persist the apex custom domain in `wrangler.jsonc` by adding `"routes": [{ "pattern": "futurefounderhq.org", "custom_domain": true }]` at the top level. The prepared comment shows where. No zone ID is needed. It is omitted initially so an inactive zone cannot block workers.dev deployment. Commit the route before subsequent automated deploys to keep the repository and dashboard aligned.
+5. Verify the workers.dev deployment before attaching the production domain. In Worker **Settings → Domains & Routes → Add → Custom Domain**, enter **futurefoundershq.org**. Cloudflare provisions the appropriate DNS and certificate. Review any existing conflicting hostname record before changing it.
+6. The custom domain currently serves the Worker. If its Cloudflare binding is later recreated, add `"routes": [{ "pattern": "futurefoundershq.org", "custom_domain": true }]` to `wrangler.jsonc` after confirming the zone is active.
 
 ## Permanent www redirect
 
 This static-only Worker cannot select redirects by hostname using `_redirects`. Configure a Cloudflare **Single Redirect Rule** in the active zone:
 
 - Name: **WWW to canonical apex**.
-- Match expression: `(http.host eq "www.futurefounderhq.org")`.
-- Dynamic destination expression: `concat("https://futurefounderhq.org", http.request.uri.path)`.
+- Match expression: `(http.host eq "www.futurefoundershq.org")`.
+- Dynamic destination expression: `concat("https://futurefoundershq.org", http.request.uri.path)`.
 - Status: **301**.
 - **Preserve query string: enabled**.
 - The www hostname must have a **proxied** DNS record for the rule to execute. Use Cloudflare's www-to-root template/onboarding to create or confirm that record; the account's actual DNS configuration has not yet been observed. Do not change mail or unrelated hostnames.
 
-Expected result: `https://www.futurefounderhq.org/chapters/?source=school` → HTTP 301 with `Location: https://futurefounderhq.org/chapters/?source=school`. This rule is prepared in documentation, not claimed to be deployed. Confirm HTTPS certificates for both hostnames and enable the zone's HTTPS redirect after certificate activation.
+Expected result: `https://www.futurefoundershq.org/chapters/?source=school` → HTTP 301 with `Location: https://futurefoundershq.org/chapters/?source=school`. Confirm the redirect in Cloudflare before claiming the www host is active.
 
 ## Final live verification
 
-Run `npm run check:routes -- https://ACTUAL-WORKER-URL` using the exact URL Cloudflare shows (not the literal placeholder), then run it against `https://futurefounderhq.org` after activation. Verify the homepage, chapter profiles, competitions, application acknowledgment, assets and fonts in a browser. No real forms should be submitted for QA.
+Run `npm run check:routes -- https://future-founders-hq.uskutsav.workers.dev` and `npm run check:routes -- https://futurefoundershq.org`. Verify the homepage, chapter profiles, competitions, application acknowledgment, assets and fonts. No real forms should be submitted for QA.
 
-Check `curl -I 'https://www.futurefounderhq.org/chapters/?source=school'` for the exact 301 destination. Check sitemap.xml, robots.txt and canonical/OG URLs. Worker preview pages have canonical links to the apex domain.
+Check `curl -I 'https://www.futurefoundershq.org/chapters/?source=school'` for the exact 301 destination. Check sitemap.xml, robots.txt and canonical/OG URLs. Worker preview pages have canonical links to the apex domain.
 
 ## Content preserved and remaining organization decisions
 

@@ -18,8 +18,10 @@ export function CompetitionCard({
         <span className={`competition-status ${status.toLowerCase()}`}>
           <i />
           {status === "Closed"
-            ? "Signup deadline passed"
-            : "Upcoming competition"}
+            ? "Interest deadline passed"
+            : status === "Open"
+              ? "Interest form open"
+              : "Upcoming competition"}
         </span>
       </div>
       <h3>{c.title}</h3>
@@ -42,6 +44,16 @@ export function CompetitionCard({
           </dd>
         </div>
       </dl>
+      {c.prizes?.length ? (
+        <div className="competition-prizes" aria-label="Winner prizes">
+          <p>Winner prizes</p>
+          <ul>
+            {c.prizes.map((prize) => (
+              <li key={prize}>{prize}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
       {(c.eligibility || c.format || c.participation) && (
         <div className="competition-meta">
           {c.eligibility && (
@@ -63,7 +75,7 @@ export function CompetitionCard({
             target="_blank"
             rel="noopener noreferrer"
           >
-            {status === "Closed" ? "View Interest Form" : "Sign Up"}
+            {status === "Closed" ? "View Interest Form" : "Express Interest"}
             <span aria-hidden="true">↗</span>
             <span className="sr-only"> for {c.title} (opens in a new tab)</span>
           </a>

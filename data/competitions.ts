@@ -20,25 +20,30 @@ export type Competition = {
   url?: string;
   description: string;
   registrationNote?: string;
+  prizes?: string[];
   sample: boolean;
 };
-// Announced by the organization September 7, 2026. September 15 is interpreted
-// as the upcoming September 15, 2026. No closing time or time zone was supplied.
-// Name and interest-form purpose verified on the supplied form. Do not invent
-// an event date, prizes, eligibility, format, team size or finalized rules.
+// The organizer set October 6, 2026 as the interest deadline. The event date
+// and detailed rules remain unannounced. Prize categories were supplied by the
+// organizer; do not invent values, winner counts, eligibility or conditions.
 export const competitions: Competition[] = [
   {
     id: "case-study-2026",
     title: "Future Founders Case Study Competition",
     organizer: "Future Founders",
-    deadline: "2026-09-15",
+    deadline: "2026-10-06",
     category: "Case",
-    status: "Upcoming",
+    status: "Open",
     url: "https://forms.gle/6bdRrYmCuqYPuePC6",
     description:
-      "Put your problem-solving and business skills to the test. Sign up to express interest in the upcoming case study competition.",
+      "A student case study competition focused on problem-solving and business thinking. Share your interest by October 6, 2026. The competition date and full official rules will be announced separately.",
+    prizes: [
+      "Cash award",
+      "Gift cards",
+      "Frisco RoughRiders game tickets",
+    ],
     registrationNote:
-      "This form registers your interest. Competition details, team formation, and next steps will be announced separately.",
+      "This form records your interest. Award values, winner details, eligibility, judging, and final entry requirements will be published in the official rules.",
     sample: false,
   },
 ];

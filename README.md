@@ -45,7 +45,7 @@ The hero is a CSS bright-blue field (#0292DF) with dark navy accents (#0A2C55) w
 
 ## Before wider publication
 
-The existing Sites publication remains an owner-only preview. The production build uses `https://futurefounderhq.org` as its canonical origin and allows search indexing. Confirm the remaining chapter information, image permissions, and any organization policies before public launch. See DEPLOYMENT.md for actual deployment status. No application environment variables are required.
+The official production domain is `https://futurefoundershq.org`; the build allows search indexing and emits canonicals for that domain. Confirm remaining chapter information, image permissions, and organization policies. See DEPLOYMENT.md for deployment details. No application environment variables are required.
 
 Verify new opportunity URLs, dates, eligibility, and organizers before adding listings. External opportunities must never imply an unconfirmed partnership. No funding, sponsorship, acceptance rate, or membership claims have been invented.
 

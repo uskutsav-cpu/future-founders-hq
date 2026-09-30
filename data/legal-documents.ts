@@ -457,13 +457,13 @@ export const legalDocuments: LegalDocument[] = [
     description:
       "A complete outline to finalize separately for each announced competition.",
     review: [
-      "The Case Study Competition is collecting expressions of interest. Its full official rules and event date are not yet published; this framework is not its finalized rules.",
+      "The Case Study Competition currently lists a cash award, gift cards, and Frisco RoughRiders game tickets. Award values, winner counts, eligibility, judging details, and the event date remain unconfirmed. This framework is not the finalized rules.",
     ],
     sections: [
       {
         title: "Organizer and eligibility",
         paragraphs: [
-          "Identify legal sponsor/organizer and contact; competition name; eligible ages, school types and jurisdictions; team sizes; exclusions and conflicts. Identify any guardian permissions. State whether participation is free and review prize/sweepstakes laws before introducing chance, consideration or prizes.",
+          "Confirm the legal organizer and contact; eligible ages, school types and jurisdictions; team sizes; exclusions and conflicts; any guardian permissions; and whether participation is free. Obtain qualified review of the contest and prize rules for each jurisdiction before publishing final rules or accepting entries.",
         ],
       },
       {
@@ -481,7 +481,7 @@ export const legalDocuments: LegalDocument[] = [
       {
         title: "Prizes and results",
         paragraphs: [
-          "If applicable, list each verified prize, approximate value, conditions, taxes, restrictions, claim deadlines, winner notification and alternate-winner process. Confirm committed funding and any registration/bonding requirements before announcing a prize. Do not require a purchase in a purported sweepstakes without specific legal review.",
+          "The current listing names a cash award, gift cards, and Frisco RoughRiders game tickets. Before entries open, publish the prize quantities and values, winner selection, eligibility, conditions, taxes, restrictions, claim deadline and notification process. Confirm committed funding and any applicable registration requirements. Do not require a purchase in a purported sweepstakes without specific legal review.",
         ],
       },
       {

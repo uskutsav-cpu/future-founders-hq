@@ -1,7 +1,7 @@
 // Organization facts must be confirmed, never inferred from the brand or a school.
 export const legalConfig = {
-  version: "2026-09-06-draft-1",
-  preparedDate: "September 6, 2026",
+  version: "2026-09-29-draft-2",
+  preparedDate: "September 29, 2026",
   effectiveDate: null as string | null,
   adopted: false,
   operatorName: null as string | null,
