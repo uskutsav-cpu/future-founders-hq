@@ -26,9 +26,9 @@ export default function Home() {
       <section className="editorial-hero">
         <div className="container editorial-hero-grid">
           <div className="editorial-hero-copy">
-            <Eyebrow>STUDENT LED. WORLDWIDE.</Eyebrow>
-            <h1>Big ideas.<br /><em>Real</em> beginnings.</h1>
-            <p>A place for the next generation of founders. Meet your people, build your first project, and put your ambition to work.</p>
+            <Eyebrow>STUDENT ENTREPRENEURSHIP</Eyebrow>
+            <h1>Where ideas<br /><em>find their people.</em></h1>
+            <p>Future Founders connects high school and college students through local chapters, practical workshops, and competitions.</p>
             <div className="button-row">
               <Button href="/chapters">Find your chapter</Button>
               <TextLink href="/what-we-do">Explore the experience</TextLink>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           <figure className="editorial-hero-photo">
             <ResponsivePhoto kind="hero" priority sizes="(max-width: 767px) 100vw, 50vw" />
-            <figcaption><span className="photo-caption-label">THE WORK STARTS HERE</span><span>In the room.<br />Building together.</span></figcaption>
+            <figcaption><span className="photo-caption-label">INSIDE FUTURE FOUNDERS</span><span>Student led. Built together.</span></figcaption>
           </figure>
         </div>
         {competition && <div className="hero-deadline"><div className="container"><span>ON THE CALENDAR</span><Link href="/competitions">Case Study Competition</Link><span>Interest closes {formatDate(competition.deadline)}</span><Link href="/competitions" className="deadline-action">View details</Link></div></div>}
@@ -59,20 +59,20 @@ export default function Home() {
       <ApplicationNotice />
 
       <section className="container section home-introduction">
-        <div><Eyebrow>WHY FUTURE FOUNDERS</Eyebrow><h2>Good ideas need<br /><em>good company.</em></h2></div>
-        <div><p className="intro-lead">Entrepreneurship starts long before a company does. It starts with a question, a conversation, and the courage to try.</p><p className="body-copy">Future Founders brings high school and college students together through local chapters. Learn the fundamentals, test an idea, find a teammate, and build experience that belongs to you.</p><TextLink href="/about">Get to know Future Founders</TextLink></div>
+        <div><Eyebrow>BUILT BY STUDENTS</Eyebrow><h2>A community<br /><em>for the work ahead.</em></h2></div>
+        <div><p className="intro-lead">A chapter gives you a place to explore entrepreneurship with people who want to try.</p><p className="body-copy">Learn the fundamentals, test an idea, and find your next teammate. Our student-led network brings practical experience to schools and campuses, one meeting and one project at a time.</p><TextLink href="/about">Get to know Future Founders</TextLink></div>
       </section>
 
       <section className="home-pathways section">
         <div className="container">
-          <div className="home-section-heading"><div><Eyebrow>YOUR NEXT STEP</Eyebrow><h2>Make room for<br />what you could become.</h2></div><p>There’s more than one way to get started.</p></div>
+          <div className="home-section-heading"><div><Eyebrow>THE FUTURE FOUNDERS EXPERIENCE</Eyebrow><h2>Find your<br /><em>starting point.</em></h2></div><p>Meet a chapter. Take on a case.<br />Make progress on an idea.</p></div>
           <div className="pathway-grid">
             <article className="pathway-card pathway-photo-card">
               <div className="pathway-photo"><ResponsivePhoto kind="collaboration" sizes="(max-width: 767px) 100vw, 33vw" /></div>
               <div className="pathway-body"><span className="pathway-category">01 / CHAPTERS</span><h3>Find your people.</h3><p>Build alongside students at your school, with the support of a wider network.</p><TextLink href="/chapters">Explore the chapters</TextLink></div>
             </article>
             <article className="pathway-card pathway-competition">
-              <span className="pathway-category">02 / COMPETITIONS</span><span className="competition-edition">Future Founders<br />Case Study Competition</span><h3>A challenge worth<br /><em>thinking about.</em></h3><p>Put your problem-solving and business thinking to work.</p>
+              <span className="pathway-category">02 / COMPETITIONS</span><span className="competition-edition">Future Founders · 2026</span><h3>Case Study<br /><em>Competition.</em></h3><p>Put your problem-solving and business thinking to work.</p>
               {competition && <div className="pathway-deadline"><span>Interest deadline</span><strong>{formatDate(competition.deadline)}</strong><span>Event date to be announced</span></div>}
               <TextLink href="/competitions">View the competition</TextLink>
             </article>

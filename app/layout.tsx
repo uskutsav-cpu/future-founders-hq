@@ -1,9 +1,26 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/data/site";
 import "./globals.css";
 import "./design.css";
+const editorialFont = localFont({
+  src: [
+    { path: "../public/fonts/instrument-serif-regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/instrument-serif-italic.woff2", weight: "400", style: "italic" },
+  ],
+  variable: "--font-chic-serif",
+  display: "swap",
+  fallback: ["Georgia"],
+});
+const bodyFont = localFont({
+  src: "../public/fonts/manrope-latin.woff2",
+  weight: "200 800",
+  variable: "--font-chic-sans",
+  display: "swap",
+  fallback: ["Arial"],
+});
 export const metadata: Metadata = {
   title: {
     default: "Future Founders | Student Entrepreneurship Network",
@@ -39,7 +56,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={`${editorialFont.variable} ${bodyFont.variable}`}>
       <body>
         <a className="skip-link" href="#main">
           Skip to content
