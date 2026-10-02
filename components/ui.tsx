@@ -23,7 +23,6 @@ export function Button({
       href={href}
     >
       {children}
-      <Arrow />
     </Link>
   );
 }
@@ -37,7 +36,6 @@ export function TextLink({
   return (
     <Link className="text-link" href={href}>
       {children}
-      <Arrow />
     </Link>
   );
 }

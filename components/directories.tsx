@@ -100,15 +100,12 @@ export function ChapterDirectory() {
           </span>
           <span className="chapter-location">
             {c.city || c.country}
-            <small>{c.city ? c.state || c.country : ""}</small>
+            {c.city && <small>{c.state || c.country}</small>}
           </span>
           <span className="chapter-type">{c.type}</span>
           <span className="chapter-status">
             <i />
             {c.status}
-          </span>
-          <span className="row-arrow" aria-hidden="true">
-            ↗
           </span>
         </Link>
       ))}
@@ -122,7 +119,7 @@ export function ChapterDirectory() {
               setType("All");
             }}
           >
-            Clear filters →
+            Clear filters
           </button>
         </div>
       )}

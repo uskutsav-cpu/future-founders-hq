@@ -76,7 +76,6 @@ export function CompetitionCard({
             rel="noopener noreferrer"
           >
             {status === "Closed" ? "View Interest Form" : "Express Interest"}
-            <span aria-hidden="true">↗</span>
             <span className="sr-only"> for {c.title} (opens in a new tab)</span>
           </a>
         )}

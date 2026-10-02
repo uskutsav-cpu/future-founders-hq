@@ -30,13 +30,14 @@ export function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-manifesto">
-            <Link href="/" className="footer-wordmark">
+            <Link href="/" className="footer-brand">
               <Image
-                src="/resources/future-founders-logo.png"
-                width={190}
-                height={190}
-                alt="Future Founders"
+                src="/images/brand-mark.png"
+                width={42}
+                height={46}
+                alt=""
               />
+              <span>Future<br />Founders</span>
             </Link>
             <p>
               Built by students who believe <br />
@@ -60,7 +61,7 @@ export function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {name} ↗
+                      {name}
                       <span className="sr-only"> (opens in a new tab)</span>
                     </a>
                   ))}

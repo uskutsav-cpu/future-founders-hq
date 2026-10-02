@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/data/site";
 import "./globals.css";
+import "./design.css";
 export const metadata: Metadata = {
   title: {
     default: "Future Founders | Student Entrepreneurship Network",
