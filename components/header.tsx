@@ -43,7 +43,7 @@ export function Header() {
     };
   }, [open]);
   useEffect(() => {
-    const media = window.matchMedia("(min-width: 1024px)");
+    const media = window.matchMedia("(min-width: 1200px)");
     const closeOnDesktop = (event: MediaQueryListEvent) => {
       if (event.matches) setOpen(false);
     };
@@ -64,16 +64,6 @@ export function Header() {
   }, [open]);
   return (
     <header className={`site-header ${open ? "menu-open" : ""}`}>
-      <div className="utility-bar">
-        <div className="container">
-          <span>STUDENT-LED. BUILT TO GO FURTHER.</span>
-          <div>
-            <Link href="/applications">Applications</Link>
-            <Link href="/chapters">Find a Chapter</Link>
-            <Link href="/resources#chapter-leaders">For Chapter Leaders ↗</Link>
-          </div>
-        </div>
-      </div>
       <div className="header-inner">
         <Link
           className="brand"
@@ -109,10 +99,10 @@ export function Header() {
         </nav>
         <div className="header-actions">
           <Link className="join-link" href="/join">
-            Join <span aria-hidden="true">↗</span>
+            Join
           </Link>
           <Link className="header-cta" href="/start-a-chapter">
-            Start a Chapter <span aria-hidden="true">↗</span>
+            Start a Chapter
           </Link>
         </div>
         <button
@@ -138,18 +128,17 @@ export function Header() {
             <Link href={href} key={href} onClick={() => setOpen(false)}>
               <span>0{i + 1}</span>
               {label}
-              <span aria-hidden="true">↗</span>
             </Link>
           ))}
           <div className="mobile-actions">
             <Link href="/applications" onClick={() => setOpen(false)}>
-              Applications & internships →
+              Applications & internships
             </Link>
             <Link href="/start-a-chapter" onClick={() => setOpen(false)}>
-              Start a Chapter →
+              Start a Chapter
             </Link>
             <Link href="/join" onClick={() => setOpen(false)}>
-              Join the network →
+              Join the network
             </Link>
           </div>
         </nav>

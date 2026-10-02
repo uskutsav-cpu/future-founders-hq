@@ -29,7 +29,6 @@ export function Network() {
                       <small className="network-pioneer">Pioneer chapter</small>
                     )}
                   </span>
-                  <span aria-hidden="true">↗</span>
                 </Link>
               ))}
           </div>
@@ -38,7 +37,7 @@ export function Network() {
       <div className="network-bottom">
         <span>Different schools. The same drive to build.</span>
         <Link href="/start-a-chapter">
-          Add your school <span aria-hidden="true">↗</span>
+          Add your school
         </Link>
       </div>
     </div>
