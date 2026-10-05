@@ -57,6 +57,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${editorialFont.variable} ${bodyFont.variable}`}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6759411145717855"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <a className="skip-link" href="#main">
           Skip to content
